@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>L Q</title>
   
-  
+  <subtitle>L Q</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mickeyliqing.github.io/"/>
