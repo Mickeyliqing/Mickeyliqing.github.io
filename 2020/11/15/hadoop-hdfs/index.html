@@ -472,7 +472,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Hadoop基础"><a href="#Hadoop基础" class="headerlink" title="Hadoop基础"></a>Hadoop基础</h1><h2 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h2><p><code>Hadoop</code>主要分为三大模块，分别是 <code>HDFS</code>（文件分布系统）， <code>MapReduce</code>（分布式计算框架），<code>YARN</code>（资源调度管理）。</p>
-<h3 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h3><h4 id="HDFS的组成"><a href="#HDFS的组成" class="headerlink" title="HDFS的组成"></a>HDFS的组成</h4><p><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005110319144_22561.png" alt="HDFS的组成"></p>
+<h3 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h3><h4 id="HDFS的组成"><a href="#HDFS的组成" class="headerlink" title="HDFS的组成"></a>HDFS的组成</h4><p><img src="/2020/11/15/hadoop-hdfs/20201005110319144_22561.png" alt="HDFS的组成"></p>
 <h5 id="NameNode"><a href="#NameNode" class="headerlink" title="NameNode"></a>NameNode</h5><p><strong>主要作用</strong></p>
 <ul>
 <li>存储数据</li>
@@ -498,7 +498,7 @@
 <p>作为<code>NameNode</code>的冷备份；合并<code>fsimage</code>（元数据镜像文件（文件系统的目录树））和<code>fsedits</code>然后再发给<code>Namenode</code>,分担<code>NameNode</code>的一部分工作。</p>
 <p>1、<code>edits</code>：元数据的操作日志（针对文件系统做的修改操作记录）</p>
 <p>2、<code>Namenode</code>内存中存储的是<code>fsimage+edits</code>。</p>
-<p><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201006062120054_19202.png" alt="操作方式"></p>
+<p><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201006062120054_19202.png" alt="操作方式"></p>
 <ul>
 <li><code>SecondaryNameNode</code>节点 的主要功能是周期性将元数据节点的命名空间镜像文件（<code>fsimage</code>）和修改日志（<code>edits</code>）进行合并，以防edits日志文件过大。下面来看一看合并的流程：</li>
 </ul>
@@ -515,7 +515,7 @@
 <p>2、<code>HDFS</code>设置了两种机制进行条件合并（<code>hdfs-site.xml</code>）：</p>
 <p>第一种：当时间间隔大于或者等于<code>dfs.namenode.checkpoint.period</code>配置的时间是做合并（默认一小时）。</p>
 <p>第二种：当最后一次往<code>journalNode</code>写入的<code>TxId</code>（这个可以在<code>Namenode</code>日志或者50070界面可以看到）和最近一次做<code>checkpoint</code>的<code>TxId</code>的差值大于或者等于<code>dfs.namenode.checkpoint.txns</code>配置的数量（默认1000000）时做一次合并。</p>
-<p><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201006062357840_22090.png" alt="配置"></p>
+<p><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201006062357840_22090.png" alt="配置"></p>
 <blockquote>
 <p>引用的博客：<a href="https://blog.xiaoxiaomo.com/2016/06/25/Hadoop-HDFS之NameNode/" target="_blank" rel="noopener">参考资料</a></p>
 </blockquote>
@@ -555,18 +555,18 @@
 <h4 id="HDFS的读写流程"><a href="#HDFS的读写流程" class="headerlink" title="HDFS的读写流程"></a>HDFS的读写流程</h4><h5 id="HDFS的写操作"><a href="#HDFS的写操作" class="headerlink" title="HDFS的写操作"></a>HDFS的写操作</h5><blockquote>
 <p>说明：以下内容引入：<a href="https://blog.xiaoxiaomo.com/2016/06/26/Hadoop-HDFS之读写流程/" target="_blank" rel="noopener">Hadoop-HDFS之读写流程</a></p>
 </blockquote>
-<p><strong>准备工作</strong><br><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005150652629_14529.png" alt="HDFS读操作01"></p>
+<p><strong>准备工作</strong><br><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005150652629_14529.png" alt="HDFS读操作01"></p>
 <p>1、<code>HDFS client</code>先会去询问<code>NameNode</code>，看哪些<code>DataNode</code>可以存储文件。文件的拆分是在<code>HDFS client</code>中完成的，比如拆分成<code>A</code>、<code>B</code>、<code>C</code>。</p>
 <p>2、<code>NameNode</code>查看它的元数据信息，发现<code>DataNode 1</code>，<code>2</code>，<code>7</code>上有空间可以存储<code>Block A</code>，于是将此信息告诉<code>HDFS Client</code>。</p>
 <p>3、<code>HDFS Client</code>接到<code>NameNode</code>返回的<code>DataNode</code>列表信息后，它会直接联系第一个<code>DataNode1</code>，让它准备好接收<code>Block A</code>（建立TCP连接）。</p>
 <p>4、在<code>DataNode1</code>建立好<code>TCP</code>连接后它会把<code>HDFS Client</code>要写<code>Block A</code>的请求顺序传给<code>DataNode2</code>(在与<code>HDFS Client</code>建立好<code>TCP</code>连接后从<code>HDFS Client</code>获得的<code>DataNodel1</code>信息)，同理传递给<code>DataNode7</code>。</p>
 <p>5、当<code>DataNode7</code>准备好后，会回传信息过来，<code>HDFS Client</code>接到信息后表示都准备好了，就可以写数据了。</p>
-<p><strong>写入数据</strong><br><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005151000787_25320.png" alt="HDFS读数据02"></p>
+<p><strong>写入数据</strong><br><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005151000787_25320.png" alt="HDFS读数据02"></p>
 <p>1、<code>HDFS Client</code>开始往<code>DataNode1</code>写入<code>Block A</code>数据。同准备工作一样，当<code>DataNode1</code>接收完<code>Block A</code>数据后，它会顺序将<code>Block A</code>数据传输给<code>ataNode2</code>，然后<code>DataNode2</code>再传输给<code>DataNode7</code>。</p>
 <p>2、每个<code>DataNode</code>在接收完<code>Block A</code>数据后，会发消息给<code>NameNode</code>，告诉它<code>Block</code>数据已经接收完毕。</p>
 <p>3、<code>NameNode</code>同时会根据它接收到的消息更新它保存的文件系统元数据信息。</p>
 <p>4、当<code>Block A</code>成功写入3个<code>DataNode</code>之后，<code>DataNode1</code>会发送一个成功信息给<code>HDFS Client</code>，同时<code>HDFS Client</code>也会发一个<code>Block A</code>成功写入的信息给<code>NameNode</code>。之后，<code>HDFS Client</code>才能开始继续处理下一个<code>Block-Block B</code>。</p>
-<h5 id="HDFS读数据操作"><a href="#HDFS读数据操作" class="headerlink" title="HDFS读数据操作"></a>HDFS读数据操作</h5><p><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005152719398_25675.png" alt="HDFS读取文件"></p>
+<h5 id="HDFS读数据操作"><a href="#HDFS读数据操作" class="headerlink" title="HDFS读数据操作"></a>HDFS读数据操作</h5><p><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005152719398_25675.png" alt="HDFS读取文件"></p>
 <p>1、<code>HDFS Client</code>会先去联系<code>NameNode</code>，询问file.txt总共分为几个<code>Block</code>而且这些<code>Block</code>分别存放在哪些<code>DataNode</code>上。</p>
 <p>2、由于每个<code>Block</code>都会存在几个副本，所以<code>NameNode</code>会把<code>file.txt</code>文件组成的<code>Block</code>所对应的所有<code>DataNode</code>列表都返回给<code>HDFS Client</code>。</p>
 <p>3、然后<code>HDFS Client</code>会选择<code>DataNode</code>列表里的第一个<code>DataNode</code>去读取对应的<code>Block</code>。比如由于<code>Block A</code>存储在<code>DataNode1</code>，<code>2</code>，<code>7</code>，那么<code>HDFS Client</code>会到<code>DataNode1</code>去读取<code>Block A</code>；<code>Block C</code>存储在<code>DataNode7</code>，<code>8</code>，<code>9</code>，那么<code>HDFS Client</code>就回到<code>DataNode7</code>去读取<code>Block C</code>。</p>
@@ -574,12 +574,12 @@
 <h4 id="漫画详解HDFS的存储原理"><a href="#漫画详解HDFS的存储原理" class="headerlink" title="漫画详解HDFS的存储原理"></a>漫画详解HDFS的存储原理</h4><blockquote>
 <p>说明：以下图片引用自博客：<a href="https://blog.csdn.net/hudiefenmu/article/details/37655491" target="_blank" rel="noopener">翻译经典 HDFS 原理讲解漫画</a></p>
 </blockquote>
-<h5 id="HDFS写数据原理"><a href="#HDFS写数据原理" class="headerlink" title="HDFS写数据原理"></a>HDFS写数据原理</h5><p><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154307746_29899.png" alt="01"><br><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154400343_2238.png" alt="02"><br><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154419537_12863.png" alt="03"></p>
-<h5 id="HDFS读数据原理"><a href="#HDFS读数据原理" class="headerlink" title="HDFS读数据原理"></a>HDFS读数据原理</h5><p><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154514015_9371.png" alt="01"></p>
-<h5 id="HDFS故障类型和其检测方法"><a href="#HDFS故障类型和其检测方法" class="headerlink" title="HDFS故障类型和其检测方法"></a>HDFS故障类型和其检测方法</h5><p><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154611512_25627.png" alt="01"><br><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154626986_30801.png" alt="02"></p>
-<h6 id="读写故障的处理"><a href="#读写故障的处理" class="headerlink" title="读写故障的处理"></a>读写故障的处理</h6><p><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154703957_16442.png" alt="03"></p>
-<h6 id="DataNode-故障处理"><a href="#DataNode-故障处理" class="headerlink" title="DataNode 故障处理"></a>DataNode 故障处理</h6><p><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154733471_9427.png" alt="04"></p>
-<h6 id="副本布局策略"><a href="#副本布局策略" class="headerlink" title="副本布局策略"></a>副本布局策略</h6><p><img src="/.io//D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154803522_9279.png" alt="05"></p>
+<h5 id="HDFS写数据原理"><a href="#HDFS写数据原理" class="headerlink" title="HDFS写数据原理"></a>HDFS写数据原理</h5><p><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154307746_29899.png" alt="01"><br><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154400343_2238.png" alt="02"><br><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154419537_12863.png" alt="03"></p>
+<h5 id="HDFS读数据原理"><a href="#HDFS读数据原理" class="headerlink" title="HDFS读数据原理"></a>HDFS读数据原理</h5><p><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154514015_9371.png" alt="01"></p>
+<h5 id="HDFS故障类型和其检测方法"><a href="#HDFS故障类型和其检测方法" class="headerlink" title="HDFS故障类型和其检测方法"></a>HDFS故障类型和其检测方法</h5><p><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154611512_25627.png" alt="01"><br><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154626986_30801.png" alt="02"></p>
+<h6 id="读写故障的处理"><a href="#读写故障的处理" class="headerlink" title="读写故障的处理"></a>读写故障的处理</h6><p><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154703957_16442.png" alt="03"></p>
+<h6 id="DataNode-故障处理"><a href="#DataNode-故障处理" class="headerlink" title="DataNode 故障处理"></a>DataNode 故障处理</h6><p><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154733471_9427.png" alt="04"></p>
+<h6 id="副本布局策略"><a href="#副本布局策略" class="headerlink" title="副本布局策略"></a>副本布局策略</h6><p><img src="/2020/11/15/hadoop-hdfs/D:%5CMyProgramBlog%5Csource_posts%5CHadoop-HDFS%5C20201005154803522_9279.png" alt="05"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
