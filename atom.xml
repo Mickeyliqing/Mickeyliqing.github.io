@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>L Q</title>
+  
+  <subtitle>L Q</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://mickeyliqing.github.io/"/>
+  <updated>2020-10-07T09:02:33.353Z</updated>
+  <id>http://mickeyliqing.github.io/</id>
+  
+  <author>
+    <name>L Q</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hadoop/Hadoop_支持LZO压缩</title>
+    <link href="http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-zhi-chi-lzo-ya-suo/"/>
+    <id>http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-zhi-chi-lzo-ya-suo/</id>
+    <published>2020-11-15T05:51:45.157Z</published>
+    <updated>2020-10-07T09:02:33.353Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Hadoop-支持LZO压缩&quot;&gt;&lt;a href=&quot;#Hadoop-支持LZO压缩&quot; class=&quot;headerlink&quot; title=&quot;Hadoop_支持LZO压缩&quot;&gt;&lt;/a&gt;Hadoop_支持LZO压缩&lt;/h1&gt;&lt;h2 id=&quot;第一步：安装-LZO库。&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop/Hadoop_常见错误</title>
+    <link href="http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-chang-jian-cuo-wu/"/>
+    <id>http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-chang-jian-cuo-wu/</id>
+    <published>2020-11-15T05:51:44.914Z</published>
+    <updated>2020-10-07T07:36:05.110Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Hadoop常见错误&quot;&gt;&lt;a href=&quot;#Hadoop常见错误&quot; class=&quot;headerlink&quot; title=&quot;Hadoop常见错误&quot;&gt;&lt;/a&gt;Hadoop常见错误&lt;/h1&gt;&lt;h2 id=&quot;1：安装Hadoop集群配置注意事项&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop/Hadoop_基于ZK的高可用集群安装</title>
+    <link href="http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-ji-yu-zk-de-gao-ke-yong-ji-qun-an-zhuang/"/>
+    <id>http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-ji-yu-zk-de-gao-ke-yong-ji-qun-an-zhuang/</id>
+    <published>2020-11-15T05:51:44.767Z</published>
+    <updated>2020-10-07T08:43:10.971Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Hadoop-基于-ZK-的高可用集群安装&quot;&gt;&lt;a href=&quot;#Hadoop-基于-ZK-的高可用集群安装&quot; class=&quot;headerlink&quot; title=&quot;Hadoop 基于 ZK 的高可用集群安装&quot;&gt;&lt;/a&gt;&lt;code&gt;Hadoop&lt;/code&gt; 基于
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop/Hadoop_伪分布式安装</title>
+    <link href="http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-wei-fen-bu-shi-an-zhuang/"/>
+    <id>http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-wei-fen-bu-shi-an-zhuang/</id>
+    <published>2020-11-15T05:51:44.413Z</published>
+    <updated>2020-10-07T08:04:47.295Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Hadoop伪分布式安装&quot;&gt;&lt;a href=&quot;#Hadoop伪分布式安装&quot; class=&quot;headerlink&quot; title=&quot;Hadoop伪分布式安装&quot;&gt;&lt;/a&gt;Hadoop伪分布式安装&lt;/h1&gt;&lt;h2 id=&quot;1：添加-hadoop-用户&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop/Hadoop_YARN</title>
+    <link href="http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-yarn/"/>
+    <id>http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-yarn/</id>
+    <published>2020-11-15T05:51:44.223Z</published>
+    <updated>2020-10-05T09:18:17.660Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Hadoop-YARN&quot;&gt;&lt;a href=&quot;#Hadoop-YARN&quot; class=&quot;headerlink&quot; title=&quot;Hadoop_YARN&quot;&gt;&lt;/a&gt;Hadoop_YARN&lt;/h1&gt;&lt;h2 id=&quot;YARN主要架构&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop/Hadoop_MapReduce</title>
+    <link href="http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-mapreduce/"/>
+    <id>http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-mapreduce/</id>
+    <published>2020-11-15T05:51:43.974Z</published>
+    <updated>2020-10-06T02:22:01.203Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Hadoop-MapReduce&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce&quot; class=&quot;headerlink&quot; title=&quot;Hadoop_MapReduce&quot;&gt;&lt;/a&gt;Hadoop_MapReduce&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop/Hadoop_HDFS</title>
+    <link href="http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-hdfs/"/>
+    <id>http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-hdfs/</id>
+    <published>2020-11-15T05:51:43.870Z</published>
+    <updated>2020-10-06T02:21:56.429Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Hadoop基础&quot;&gt;&lt;a href=&quot;#Hadoop基础&quot; class=&quot;headerlink&quot; title=&quot;Hadoop基础&quot;&gt;&lt;/a&gt;Hadoop基础&lt;/h1&gt;&lt;h2 id=&quot;Hadoop&quot;&gt;&lt;a href=&quot;#Hadoop&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
