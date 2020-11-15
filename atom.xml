@@ -159,7 +159,7 @@
     <link href="http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-hdfs/"/>
     <id>http://mickeyliqing.github.io/2020/11/15/hadoop/hadoop-hdfs/</id>
     <published>2020-11-15T05:51:43.870Z</published>
-    <updated>2020-10-06T02:21:56.429Z</updated>
+    <updated>2020-11-15T06:16:06.482Z</updated>
     
     <summary type="html">
     
@@ -167,7 +167,10 @@
       
         
         
-          &lt;h1 id=&quot;Hadoop基础&quot;&gt;&lt;a href=&quot;#Hadoop基础&quot; class=&quot;headerlink&quot; title=&quot;Hadoop基础&quot;&gt;&lt;/a&gt;Hadoop基础&lt;/h1&gt;&lt;h2 id=&quot;Hadoop&quot;&gt;&lt;a href=&quot;#Hadoop&quot;
+          &lt;pre&gt;&lt;code&gt;title: Hadoop 基础
+date: 2020-11-15 14:11:30
+categories: 
+- HDFS&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;Hadoop基础&quot;&gt;&lt;a href=&quot;#Hadoop基础&quot;
         
       
     
