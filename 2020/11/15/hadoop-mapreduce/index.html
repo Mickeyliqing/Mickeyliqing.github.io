@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, L Q">
+    <meta name="keywords" content="Hadoop_MapReduce, L Q">
     <meta name="description" content="lq">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签 | L Q</title>
+    <title>Hadoop_MapReduce | L Q</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">标签</h1>
+                    <h1 class="description center-align post-title">Hadoop_MapReduce</h1>
                 </div>
             </div>
         </div>
@@ -427,12 +427,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/MapReduce/">
+                                <span class="chip bg-color">MapReduce</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Hadoop/" class="post-category">
+                                Hadoop
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -458,7 +471,67 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h1 id="Hadoop-MapReduce"><a href="#Hadoop-MapReduce" class="headerlink" title="Hadoop_MapReduce"></a>Hadoop_MapReduce</h1><h2 id="理解MapReduce"><a href="#理解MapReduce" class="headerlink" title="理解MapReduce"></a>理解MapReduce</h2><ul>
+<li><code>Mapping</code>: 对集合里的每个目标应用同一个操作。</li>
+<li><code>Reducing</code>：遍历集合中的元素来返回一个综合的结果。</li>
+<li>计算框架</li>
+</ul>
+<p><img src="/2020/11/15/hadoop-mapreduce/%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/BigDataNotes/Hadoop/_v_images/20201006092421468_32521.png" alt="计算框架"></p>
+<ul>
+<li>计算模型</li>
+</ul>
+<p>在运行一个<code>MapReduce</code>计算任务时候，任务过程被分为两个阶段：<code>Map</code>阶段和<code>Reduce</code>阶段，每个阶段都是用键值对（<code>key/value</code>）作为输入（<code>Input</code>）和输出（<code>Output</code>）。而程序员要做的就是定义好这两个阶段的函数：<code>Map</code>函数和<code>Reduce</code>函数。</p>
+<h2 id="MapReduce运行机制"><a href="#MapReduce运行机制" class="headerlink" title="MapReduce运行机制"></a>MapReduce运行机制</h2><h3 id="角色职责"><a href="#角色职责" class="headerlink" title="角色职责"></a>角色职责</h3><p><strong>1：程序运行时过程设计到的一个角色实体</strong></p>
+<p>1.1. <code>Client</code>：编写<code>mapreduce</code>程序，配置作业，提交作业的客户端 ；</p>
+<p>1.2. <code>ResourceManager</code>：集群中的资源分配管理 ；</p>
+<p>1.3. <code>NodeManager</code>：启动和监管各自节点上的计算资源 ；</p>
+<p>1.4. <code>ApplicationMaster</code>：每个程序对应一个<code>AM</code>，负责程序的任务调度，本身也是运行在<code>NM</code>的<code>Container</code>中 ；</p>
+<p>1.5.<code>HDFS</code>：分布式文件系统，保存作业的数据、配置信息等等。</p>
+<p><strong>2：客户端提交Job</strong></p>
+<p>2.1. 客户端编写好<code>Job</code>后，调用<code>Job</code>实例的<code>Submit()</code>或者<code>waitForCompletion()</code>方法提交作业；</p>
+<p>2.2. 客户端向<code>ResourceManager</code>请求分配一个<code>Application ID</code>，客户端会对程序的输出、输入路径进行检查，如果没有问题，进行作业输入分片的计算。</p>
+<p><strong>3：Job提交到ResourceManager</strong></p>
+<p>3.1. 将作业运行所需要的资源拷贝到<code>HDFS</code>中（jar包、配置文件和计算出来的输入分片信息等）；</p>
+<p>3.2. 调用<code>ResourceManager</code>的<code>submitApplication</code>方法将作业提交到<code>ResourceManager</code>。</p>
+<p><strong>4：给作业分配ApplicationMaster</strong></p>
+<p>4.1. <code>ResourceManager</code>收到<code>submitApplication</code>方法的调用之后会命令一个<code>NodeManager</code>启动一个<code>Container</code> ；</p>
+<p>4.2. 在该<code>NodeManager</code>的<code>Container</code>上启动管理该作业的<code>ApplicationMaster</code>进程。</p>
+<p><strong>5：ApplicationMaster初始化作业</strong></p>
+<p>5.1. <code>ApplicationMaste</code>对作业进行初始化操作；</p>
+<p>5.2. <code>ApplicationMaster</code>从<code>HDFS</code>中获得输入分片信息(<code>map</code>、<code>reduce</code>任务数)</p>
+<p><strong>6：任务分配</strong></p>
+<p>6.1. <code>ApplicationMaster</code>为其每个<code>map</code>和<code>reduce</code>任务向<code>RM</code>请求计算资源；<br>6.2. <code>map</code>任务优先于<code>reduce</code>任，<code>map</code>数据优先考虑本地化的数据。</p>
+<p><strong>7：任务执行</strong></p>
+<p>7.1. 在<code>Container</code> 上启动任务（通过<code>YarnChild</code>进程来运行），执行<code>map/reduce</code>任务。</p>
+<h3 id="MapReduce-执行过程"><a href="#MapReduce-执行过程" class="headerlink" title="MapReduce 执行过程"></a>MapReduce 执行过程</h3><p><strong>1：输入分片（Input Split）</strong><br>(一个<code>Input Split</code> 对应一个<code>Map</code>)</p>
+<p>1.1. 一个大的文件会根据<code>Block</code>块切分成多个分片，每个输入分片会让一个<code>Map</code>任务来处理（默认情况下，<code>HDFS</code>的块为128M作为一个分片）。</p>
+<p>1.2. 例如一个300MB的文件就会被切分问3个分片（<code>128MB InputSplit</code>、<code>128MB InputSplit</code>、<code>44MB InputSplit</code>），交给三个<code>Map</code>任务去处理。</p>
+<p><strong>2：Map任务阶段：由我们自己编写，最后调用 context.write(…)；</strong><br>(一个<code>Map</code> 对应一个内存缓存区)</p>
+<p>2.1. <code>Map</code>输出的结果会暂且放在一个环形内存缓冲区中（默认<code>mapreduce.task.io.sort.mb=100M</code>）,当该缓冲区快要溢出时（默认<code>mapreduce.map.sort.spill.percent=0.8</code>）,会在本地文件系统中创建一个溢出文件，将该缓冲区中的数据写入这个文件；</p>
+<p><strong>3：Partition分区阶段</strong><br>(一个<code>Partition</code>分区对应一个<code>Reduce</code>任务)</p>
+<p>3.1. 在<code>Map</code>中调用 <code>context.write(k2,v2)</code>方法输出<code>&lt;k2,v2&gt;</code>，该方法会立刻调用<code>Partitioner</code>类对数据进行分区，一个分区对应一个 <code>Reduce Task</code>。</p>
+<p>3.2. 默认的分区实现类是 <code>HashPartitioner</code> ，根据k2的哈希值<code>% numReduceTasks</code>，可能出现“数据倾斜”现象。</p>
+<p>3.3. 可以自定义<code>Partition</code> ，调用<code>job.setPartitioner(…)</code>自己定义分区函数。</p>
+<p><strong>4：Combiner合并阶段：将属于同一个Reduce处理的输出结果进行合并操作</strong></p>
+<p>4.1. 是可选的；</p>
+<p>4.2. 目的有三个：1.减少<code>Key-Value</code>对；2.减少网络传输；3.减少<code>Reduce</code>的处理。</p>
+<p><strong>5：<code>Shuffle</code>阶段：即<code>Map和Reduce</code>中间的这个过程</strong></p>
+<p>5.1. 首先<code>Map</code>在做输出时候会在内存里开启一个环形内存缓冲区，专门用来做输出，同时<code>Map</code>还会启动一个守护线程；</p>
+<p>5.2. 如缓冲区的内存达到了阈值的80%，守护线程就会把内容写到磁盘上，这个过程叫<code>Spill</code>，另外的20%内存可以继续写入要写进磁盘的数据；</p>
+<p>5.3. 写入磁盘和写入内存操作是互不干扰的，如果缓存区被撑满了，那么<code>Map</code>就会阻塞写入内存的操作，让写入磁盘操作完成后再继续执行写入内存操作;</p>
+<p>5.4. 写入磁盘时会有个排序操作，如果定义了<code>Combiner</code>函数，那么排序前还会执行<code>Combiner</code>操作；</p>
+<p>5.5. 每次<code>Spill</code>操作也就是写入磁盘操作时候就会写一个溢出文件，也就是说在做<code>Map</code>输出有几次<code>Spill</code>就会产生多少个溢出文件，等<code>Map</code>输出全部做完后，<code>Map</code>会合并这些输出文件，这个过程里还会有一个<code>Partitioner</code>操作（如上）</p>
+<p>5.6. 最后 <code>Reduce</code> 就是合并<code>Map</code>输出文件，<code>Partitioner</code>会找到对应的<code>Map</code>输出文件，然后进行复制操作，复制操作时<code>Reduce</code>会开启几个复制线程，这些线程默认个数是5个（可修改），这个复制过程和<code>Map</code>写入磁盘过程类似，也有阈值和内存大小，阈值一样可以在配置文件里配置，而内存大小是直接使用<code>Reduce</code>的<code>Tasktracker</code>的内存大小，复制时候<code>Reduce</code>还会进行排序操作和合并文件操作，这些操作完了就会进行<code>Reduce</code>计算了。</p>
+<p><strong>6：Reduce阶段：</strong><br>由我们自己编写，最终结果存储在hdfs上的,一个<code>Reduce</code>对应一个输出文件。</p>
+<ul>
+<li>整个过程<br><img src="/2020/11/15/hadoop-mapreduce/%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/BigDataNotes/Hadoop/_v_images/20201006101106334_25594.png" alt="01"></li>
+<li>Spill 过程</li>
+</ul>
+<p><img src="/2020/11/15/hadoop-mapreduce/%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/BigDataNotes/Hadoop/_v_images/20201006101215231_10886.png" alt="02"></p>
+<blockquote>
+<p>参考内容：<a href="https://blog.xiaoxiaomo.com/2016/07/03/Hadoop-MapReduce详解/" target="_blank" rel="noopener">Hadoop–MapReduce详解</a></p>
+</blockquote>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -501,7 +574,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Mickeyliqing.github.io/tags/index.html">http://Mickeyliqing.github.io/tags/index.html</a>
+                    <a href="http://Mickeyliqing.github.io/2020/11/15/hadoop-mapreduce/">http://Mickeyliqing.github.io/2020/11/15/hadoop-mapreduce/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -538,7 +611,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/MapReduce/">
+                                    <span class="chip bg-color">MapReduce</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -702,42 +779,54 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2020/11/15/hadoop-yarn/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="标签">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Hadoop_YARN">
                         
-                        <span class="card-title">标签</span>
+                        <span class="card-title">Hadoop_YARN</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            Hadoop_YARNYARN主要架构
+ResourceManager集群资源的协调者和管理者，负责给用户提交的所有程序分配资源。
+NodeManager集群具体资源的管理者，负责节点内所有容器的生命周期的管理，资源监控。
+具体：
+
+启动时
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            L Q
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hadoop/" class="post-category">
+                                    Hadoop
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/YARN/">
+                        <span class="chip bg-color">YARN</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -745,25 +834,28 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2020/11/15/hadoop-hdfs/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="标签">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Hadoop_HDFS">
                         
-                        <span class="card-title">标签</span>
+                        <span class="card-title">Hadoop_HDFS</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            Hadoop基础HadoopHadoop主要分为三大模块，分别是 HDFS（文件分布系统）， MapReduce（分布式计算框架），YARN（资源调度管理）。
+HDFSHDFS的组成
+NameNode主要作用
+
+存储数据
+
+存储对应的元数据
                         
                     </div>
                     <div class="publish-info">
@@ -772,13 +864,24 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            L Q
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hadoop/" class="post-category">
+                                    Hadoop
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HDFS/">
+                        <span class="chip bg-color">HDFS</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

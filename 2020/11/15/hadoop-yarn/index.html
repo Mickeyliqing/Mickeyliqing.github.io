@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, L Q">
+    <meta name="keywords" content="Hadoop_YARN, L Q">
     <meta name="description" content="lq">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签 | L Q</title>
+    <title>Hadoop_YARN | L Q</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">标签</h1>
+                    <h1 class="description center-align post-title">Hadoop_YARN</h1>
                 </div>
             </div>
         </div>
@@ -427,12 +427,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/YARN/">
+                                <span class="chip bg-color">YARN</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Hadoop/" class="post-category">
+                                Hadoop
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -458,7 +471,35 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h1 id="Hadoop-YARN"><a href="#Hadoop-YARN" class="headerlink" title="Hadoop_YARN"></a>Hadoop_YARN</h1><h2 id="YARN主要架构"><a href="#YARN主要架构" class="headerlink" title="YARN主要架构"></a>YARN主要架构</h2><p><img src="/2020/11/15/hadoop-yarn/20201005170226359_14277.png" alt="yarn主要架构"></p>
+<h3 id="ResourceManager"><a href="#ResourceManager" class="headerlink" title="ResourceManager"></a>ResourceManager</h3><p>集群资源的协调者和管理者，负责给用户提交的所有程序分配资源。</p>
+<h3 id="NodeManager"><a href="#NodeManager" class="headerlink" title="NodeManager"></a>NodeManager</h3><p>集群具体资源的管理者，负责节点内所有容器的生命周期的管理，资源监控。</p>
+<p><strong>具体：</strong></p>
+<ul>
+<li>启动时向 <code>ResourceManager</code> 注册并定时发送心跳消息，等待 <code>ResourceManager</code> 的指令；</li>
+<li>维护 <code>Container</code> 的生命周期，监控 <code>Container</code> 的资源使用情况；</li>
+<li>管理任务运行时的相关依赖，根据 <code>ApplicationMaster</code> 的需要，在启动 <code>Container</code> 之前将需要的程序及其依赖拷贝到本地。</li>
+</ul>
+<h3 id="ApplicationMaster"><a href="#ApplicationMaster" class="headerlink" title="ApplicationMaster"></a>ApplicationMaster</h3><p>负责协调来自<code>ResourceManager</code>的资源，并通过 <code>NodeManager</code> 监视容器内资源的使用情况，同时还负责任务的监控与容错。</p>
+<p><strong>具体：</strong></p>
+<ul>
+<li>根据应用的运行状态来决定动态计算资源需求；</li>
+<li>向 <code>ResourceManager</code> 申请资源，监控申请的资源的使用情况；</li>
+<li>跟踪任务状态和进度，报告资源的使用情况和应用的进度信息；</li>
+<li>负责任务的容错。</li>
+</ul>
+<h3 id="Container"><a href="#Container" class="headerlink" title="Container"></a>Container</h3><p><code>YARN</code>资源的抽象，<code>YARN</code> 会为每个任务分配一个 <code>Container</code>，该任务只能使用该 <code>Container</code> 中描述的资源。<code>ApplicationMaster</code> 可在 <code>Container</code> 内运行任何类型的任务。</p>
+<h3 id="YARN工作原理图"><a href="#YARN工作原理图" class="headerlink" title="YARN工作原理图"></a>YARN工作原理图</h3><blockquote>
+<p>说明：一下内容引入：<a href="https://github.com/heibaiying/BigData-Notes" target="_blank" rel="noopener">BigData-Notes</a></p>
+</blockquote>
+<p><img src="/2020/11/15/hadoop-yarn/20201005171444074_15239.png" alt="yarn工作原理图"></p>
+<ol>
+<li><code>Client</code> 提交作业到 YARN 上；</li>
+<li><code>Resource Manager</code> 选择一个 <code>Node Manager</code>，启动一个 <code>Container</code> 并运行 <code>Application Master</code> 实例；</li>
+<li><code>Application Master</code> 根据实际需要向 <code>Resource Manager</code> 请求更多的 <code>Container</code> 资源（如果作业很小, 应用管理器会选择在其自己的 JVM 中运行任务）；</li>
+<li><code>Application Master</code> 通过获取到的 <code>Container</code> 资源执行分布式计算。</li>
+</ol>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -501,7 +542,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Mickeyliqing.github.io/tags/index.html">http://Mickeyliqing.github.io/tags/index.html</a>
+                    <a href="http://Mickeyliqing.github.io/2020/11/15/hadoop-yarn/">http://Mickeyliqing.github.io/2020/11/15/hadoop-yarn/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -538,7 +579,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/YARN/">
+                                    <span class="chip bg-color">YARN</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -702,42 +747,51 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2020/11/15/hadoop-chang-jian-cuo-wu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="标签">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Hadoop_常见错误">
                         
-                        <span class="card-title">标签</span>
+                        <span class="card-title">Hadoop_常见错误</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            Hadoop常见错误1：安装Hadoop集群配置注意事项
+配置hosts的时候注意主机名，不能使用带下划线的主机名。例如：worker_01，不能这样配置，要用worker01。配置worker_01，Hadoop集群会解析不到。
+初次启动
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            L Q
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hadoop/" class="post-category">
+                                    Hadoop
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/">
+                        <span class="chip bg-color">常见错误</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -745,25 +799,31 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2020/11/15/hadoop-mapreduce/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="标签">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Hadoop_MapReduce">
                         
-                        <span class="card-title">标签</span>
+                        <span class="card-title">Hadoop_MapReduce</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            Hadoop_MapReduce理解MapReduce
+Mapping: 对集合里的每个目标应用同一个操作。
+Reducing：遍历集合中的元素来返回一个综合的结果。
+计算框架
+
+
+
+计算模型
+
+在运行一个MapReduce计算任务时候，任
                         
                     </div>
                     <div class="publish-info">
@@ -772,13 +832,24 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            L Q
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hadoop/" class="post-category">
+                                    Hadoop
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MapReduce/">
+                        <span class="chip bg-color">MapReduce</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

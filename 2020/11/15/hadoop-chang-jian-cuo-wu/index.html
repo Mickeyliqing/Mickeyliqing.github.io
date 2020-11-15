@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, L Q">
+    <meta name="keywords" content="Hadoop_常见错误, L Q">
     <meta name="description" content="lq">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签 | L Q</title>
+    <title>Hadoop_常见错误 | L Q</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">标签</h1>
+                    <h1 class="description center-align post-title">Hadoop_常见错误</h1>
                 </div>
             </div>
         </div>
@@ -427,12 +427,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/">
+                                <span class="chip bg-color">常见错误</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Hadoop/" class="post-category">
+                                Hadoop
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -458,7 +471,45 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h1 id="Hadoop常见错误"><a href="#Hadoop常见错误" class="headerlink" title="Hadoop常见错误"></a>Hadoop常见错误</h1><h2 id="1：安装Hadoop集群配置注意事项"><a href="#1：安装Hadoop集群配置注意事项" class="headerlink" title="1：安装Hadoop集群配置注意事项"></a>1：安装<code>Hadoop</code>集群配置注意事项</h2><ul>
+<li>配置<code>hosts</code>的时候注意主机名，不能使用带下划线的主机名。例如：<code>worker_01</code>，不能这样配置，要用<code>worker01</code>。配置<code>worker_01</code>，<code>Hadoop</code>集群会解析不到。</li>
+<li>初次启动的时候应该严格按照启动顺序来进行。初次启动的启动顺序为：</li>
+</ul>
+<p>1、启动<code>ZK</code></p>
+<pre class=" language-xshell"><code class="language-xshell">zkServer.sh start</code></pre>
+<p>2、启动<code>Journalnode</code></p>
+<pre class=" language-xshell"><code class="language-xshell">hadoop-daemon.sh start journalnode</code></pre>
+<p>3、格式化<code>HDFS</code></p>
+<pre class=" language-xshell"><code class="language-xshell">hdfs namenode -format</code></pre>
+<ul>
+<li>（在<code>Master</code>上格式化，格式化成功后需要将 <code>NameNode</code> 元数据目录的内容，复制到其他未格式化的 <code>NameNode</code> 上。元数据存储目录就是我们在 <code>hdfs-site.xml</code> 中使用 <code>dfs.namenode.name.dir</code> 属性指定的目录。）</li>
+</ul>
+<pre class=" language-xshell"><code class="language-xshell">scp -r /home/hadoop/namenode/data worker01:/home/hadoop/namenode/</code></pre>
+<p>4、格式化<code>ZKFC</code></p>
+<pre class=" language-xshell"><code class="language-xshell">hdfs zkfc -formatZK</code></pre>
+<p>5、启动<code>HDFS</code></p>
+<pre class=" language-xshell"><code class="language-xshell">start-dfs.sh</code></pre>
+<p>6、启动<code>YARN</code></p>
+<pre class=" language-xshell"><code class="language-xshell">start-yarn.sh</code></pre>
+<ul>
+<li>（一般情况下<code>worker03</code> 上的<code>ResourceManager</code>启动不起来，需要单独启动）</li>
+</ul>
+<pre class=" language-xshell"><code class="language-xshell">yarn-daemon.sh start resourcemanager</code></pre>
+<h2 id="2：Hadoop-集群部署在了Linux虚拟机上，然后在Win上编程测试。"><a href="#2：Hadoop-集群部署在了Linux虚拟机上，然后在Win上编程测试。" class="headerlink" title="2：Hadoop 集群部署在了Linux虚拟机上，然后在Win上编程测试。"></a>2：<code>Hadoop</code> 集群部署在了<code>Linux</code>虚拟机上，然后在<code>Win</code>上编程测试。</h2><p><strong>2.1、（出现连接不成功的问题）(<code>192.168.48.129</code>) 是虚拟机的<code>IP</code>。</strong></p>
+<p><strong>解决：</strong></p>
+<ul>
+<li>1：代码里</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String HDFS_PATH <span class="token operator">=</span> <span class="token string">"hdfs://192.168.48.129:9000"</span><span class="token punctuation">;</span></code></pre>
+<p>写成<code>IP</code>地址和端口的形式。</p>
+<ul>
+<li>2：配置 <code>core-site.xml</code> 里也配置成IP和端口的形式。</li>
+</ul>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>fs.defaultFS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://192.168.48.129:9000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span></code></pre>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -501,7 +552,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Mickeyliqing.github.io/tags/index.html">http://Mickeyliqing.github.io/tags/index.html</a>
+                    <a href="http://Mickeyliqing.github.io/2020/11/15/hadoop-chang-jian-cuo-wu/">http://Mickeyliqing.github.io/2020/11/15/hadoop-chang-jian-cuo-wu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -538,7 +589,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/">
+                                    <span class="chip bg-color">常见错误</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -702,42 +757,54 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2020/11/15/hadoop-ji-yu-zk-de-gao-ke-yong-ji-qun-an-zhuang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="标签">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Hadoop_基于ZK的高可用集群安装">
                         
-                        <span class="card-title">标签</span>
+                        <span class="card-title">Hadoop_基于ZK的高可用集群安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            Hadoop 基于 ZK 的高可用集群安装注意事项1、安装 ZooKeeper 配置注意事项 
+
+1、新建 data 文件夹，注意这个文件夹的权限。
+2、新建文件 myid ,注意这个文件的权限。
+3、要分别向 myid 写入1,2,3。
+
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            L Q
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hadoop/" class="post-category">
+                                    Hadoop
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9F%BA%E4%BA%8EZK%E7%9A%84%E9%AB%98%E5%8F%AF%E7%94%A8%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%89%E8%A3%85/">
+                        <span class="chip bg-color">基于ZK的高可用伪分布式安装</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -745,25 +812,27 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2020/11/15/hadoop-yarn/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="标签">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Hadoop_YARN">
                         
-                        <span class="card-title">标签</span>
+                        <span class="card-title">Hadoop_YARN</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            Hadoop_YARNYARN主要架构
+ResourceManager集群资源的协调者和管理者，负责给用户提交的所有程序分配资源。
+NodeManager集群具体资源的管理者，负责节点内所有容器的生命周期的管理，资源监控。
+具体：
+
+启动时
                         
                     </div>
                     <div class="publish-info">
@@ -772,13 +841,24 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            L Q
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hadoop/" class="post-category">
+                                    Hadoop
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/YARN/">
+                        <span class="chip bg-color">YARN</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

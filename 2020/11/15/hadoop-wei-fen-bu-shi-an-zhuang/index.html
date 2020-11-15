@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, L Q">
+    <meta name="keywords" content="Hadoop_伪分布式安装, L Q">
     <meta name="description" content="lq">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签 | L Q</title>
+    <title>Hadoop_伪分布式安装 | L Q</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">标签</h1>
+                    <h1 class="description center-align post-title">Hadoop_伪分布式安装</h1>
                 </div>
             </div>
         </div>
@@ -427,12 +427,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E4%BC%AA%E5%88%86%E5%B8%83%E5%AE%89%E8%A3%85/">
+                                <span class="chip bg-color">伪分布安装</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Hadoop/" class="post-category">
+                                Hadoop
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -458,7 +471,118 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h1 id="Hadoop伪分布式安装"><a href="#Hadoop伪分布式安装" class="headerlink" title="Hadoop伪分布式安装"></a>Hadoop伪分布式安装</h1><h2 id="1：添加-hadoop-用户"><a href="#1：添加-hadoop-用户" class="headerlink" title="1：添加 hadoop 用户"></a>1：添加 <code>hadoop</code> 用户</h2><p>新增一个用户 <code>hadoop</code> ,以后就用 <code>hadoop</code> 这个用户对 <code>Hadoop</code> 进行管理。</p>
+<ul>
+<li>新增<code>hadoop</code> 用户 ：<code>adduser hadoop</code>。</li>
+<li>为<code>hadoop</code> 用户添加管理员权限：赋值<code>root</code> 权限—&gt;修改 （<code>vim /etc/sudoers</code>）,找到下面一行<code>root  ALL =（ALL）ALL</code> 下添加 <code>hadoop ALL = (ALL) ALL</code>。</li>
+</ul>
+<p><strong>执行完这个操作，接下来的命令就切换到 <code>hadoop</code> 用户下进行。</strong></p>
+<h2 id="2：-配置环境"><a href="#2：-配置环境" class="headerlink" title="2： 配置环境"></a>2： 配置环境</h2><ul>
+<li>安装<code>shh</code> 服务器：<code>sudo apt-get install openssh-server</code></li>
+<li>登录本机：<code>ssh localhost</code></li>
+</ul>
+<p>输入密码，登录成功，之后执行<code>exit</code> 退出登录。</p>
+<ul>
+<li>设置无密登录<ol>
+<li><code>cd ~/.ssh/</code> 若⽬录不存在，则再次执⾏ <code>ssh localhost</code>。</li>
+<li><code>ssh-keygen -t rsa</code> 不⽤管提⽰，⼀直按回⻋。</li>
+<li><code>cat ./id_rsa.pub &gt;&gt; ./authorized_keys</code> 加⼊授权。</li>
+<li><code>ssh localhost</code> 测试⽆密码登录。</li>
+</ol>
+</li>
+</ul>
+<p>执行第三步的时候，最好看下当前的目录，如果当前目录在 <code>/.ssh</code> 下。那么只需要执行<code>cat id_rsa.pub &gt;&gt; authorized_keys</code> 即可。</p>
+<p>查看当前目录下下的文件命令：<code>ls -a</code>。</p>
+<h2 id="3：安装-JDK"><a href="#3：安装-JDK" class="headerlink" title="3：安装 JDK"></a>3：安装 <code>JDK</code></h2><p>1：上传文件到指定位置。</p>
+<p>2：解压。</p>
+<p>3：修改系统配置（<code>vim /etc/profile</code>）。</p>
+<pre class=" language-config"><code class="language-config">export JAVA_HOME=/home/JDK/jdk1.8.0_191
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib:$CLASSPATH
+export JAVA_PATH=${JAVA_HOME}/bin:${JRE_HOME}/bin</code></pre>
+<p>4：配置生效 <code>source /etc/profile</code>。</p>
+<p>5：验证<code>java -version</code>。</p>
+<h2 id="4：安装-Hadoop"><a href="#4：安装-Hadoop" class="headerlink" title="4：安装 Hadoop"></a>4：安装 <code>Hadoop</code></h2><ul>
+<li>下载对应版本的<code>hadoop</code>，放在指定的目录下，然后解压。</li>
+<li>修改文件夹属性：<code>sudo chown hadoop:hadoop -R /home/hadoop</code>。</li>
+</ul>
+<p>文件解压放在了<code>/home/hadoop</code> 目录下。</p>
+<ul>
+<li>检查是否安装成功：进入解压后的目录，执行：<code>./bin/hadoop version</code>。</li>
+</ul>
+<p>文件目录为：<code>/home/hadoop/hadoop-2.7.2</code>。</p>
+<h2 id="5：配置伪分布式"><a href="#5：配置伪分布式" class="headerlink" title="5：配置伪分布式"></a>5：配置伪分布式</h2><p>(注意文件目录为：<code>/home/hadoop/hadoop-2.7.2</code>)</p>
+<ul>
+<li><code>core-site.xml</code></li>
+</ul>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hadoop.tmp.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span> 
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>file:/home/hadoop/tmp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>fs.defaultFS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://localhost:9000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
+<ul>
+<li><code>hdfs-site.xml</code></li>
+</ul>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.replication<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.namenode.name.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>file:/home/hadoop/tmp/dfs/name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.datanode.data.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>file:/home/hadoop/tmp/dfs/data<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
+<ul>
+<li><code>mapred-site.xml</code></li>
+</ul>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span> 
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>mapreduce.framework.name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>yarn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
+<ul>
+<li><code>yarn-site.xml</code></li>
+</ul>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span> 
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.nodemanager.aux-services<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>mapreduce_shuffle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="6：设置-HADOOP-HOME"><a href="#6：设置-HADOOP-HOME" class="headerlink" title="6：设置 HADOOP_HOME"></a>6：设置 <code>HADOOP_HOME</code></h2><ul>
+<li><code>vim /etc/profile</code> 在<code>JAVA_HOME</code> 下添加如下两行：</li>
+</ul>
+<pre class=" language-config"><code class="language-config"> export HADOOP_HOME=/home/hadoop/hadoop-2.7.2
+ export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native</code></pre>
+<ul>
+<li>修改<code>hadoop_env.sh</code> 的<code>JAVA_HOME</code> 把这个值写死 （这个值就是上文配置里的<code>JAVA_HOME</code>）。</li>
+</ul>
+<h2 id="7：格式化-NameNode"><a href="#7：格式化-NameNode" class="headerlink" title="7：格式化 NameNode"></a>7：格式化 <code>NameNode</code></h2><ul>
+<li>（在<code>HADOOP_HOME</code> 目录下执行）</li>
+</ul>
+<pre class=" language-xshell"><code class="language-xshell">./bin/hdfs namenode-formar </code></pre>
+<h2 id="8：开启-NameNode-和DataNode"><a href="#8：开启-NameNode-和DataNode" class="headerlink" title="8：开启 NameNode 和DataNode"></a>8：开启 <code>NameNode</code> 和<code>DataNode</code></h2><pre class=" language-xshell"><code class="language-xshell">./sbin/start-dfs.sh</code></pre>
+<h2 id="9：关闭-NameNode和DataNode"><a href="#9：关闭-NameNode和DataNode" class="headerlink" title="9：关闭 NameNode和DataNode"></a>9：关闭 <code>NameNode</code>和<code>DataNode</code></h2><pre class=" language-xshell"><code class="language-xshell">./sbin/stop-dfs.sh</code></pre>
+<h2 id="10：启动-YARN"><a href="#10：启动-YARN" class="headerlink" title="10：启动 YARN"></a>10：启动 <code>YARN</code></h2><pre class=" language-xshell"><code class="language-xshell">./sbin/start-yarn.sh</code></pre>
+<h2 id="11：关闭-YARN"><a href="#11：关闭-YARN" class="headerlink" title="11：关闭 YARN"></a>11：关闭 <code>YARN</code></h2><pre class=" language-xshell"><code class="language-xshell">./sbin/stop-yarn.sh</code></pre>
+<ul>
+<li>(可以使用<code>jps</code> 命令查看启动的进程)</li>
+</ul>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -501,7 +625,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Mickeyliqing.github.io/tags/index.html">http://Mickeyliqing.github.io/tags/index.html</a>
+                    <a href="http://Mickeyliqing.github.io/2020/11/15/hadoop-wei-fen-bu-shi-an-zhuang/">http://Mickeyliqing.github.io/2020/11/15/hadoop-wei-fen-bu-shi-an-zhuang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -538,7 +662,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E4%BC%AA%E5%88%86%E5%B8%83%E5%AE%89%E8%A3%85/">
+                                    <span class="chip bg-color">伪分布安装</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -702,42 +830,51 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2020/11/15/hadoop-zhi-chi-lzo-ya-suo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="标签">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Hadoop_支持LZO压缩">
                         
-                        <span class="card-title">标签</span>
+                        <span class="card-title">Hadoop_支持LZO压缩</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            Hadoop_支持LZO压缩第一步：安装 LZO库。（hadoop 用户在 home 目录下新建的文件夹 LZO，以下所有的安装均在这个目录下）
+
+安装lzo：wget http://www.oberhumer.com/opensource
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            L Q
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hadoop/" class="post-category">
+                                    Hadoop
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%94%AF%E6%8C%81LZO%E5%8E%8B%E7%BC%A9/">
+                        <span class="chip bg-color">支持LZO压缩</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -745,25 +882,27 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2020/11/15/hadoop-ji-yu-zk-de-gao-ke-yong-ji-qun-an-zhuang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="标签">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Hadoop_基于ZK的高可用集群安装">
                         
-                        <span class="card-title">标签</span>
+                        <span class="card-title">Hadoop_基于ZK的高可用集群安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            Hadoop 基于 ZK 的高可用集群安装注意事项1、安装 ZooKeeper 配置注意事项 
+
+1、新建 data 文件夹，注意这个文件夹的权限。
+2、新建文件 myid ,注意这个文件的权限。
+3、要分别向 myid 写入1,2,3。
+
                         
                     </div>
                     <div class="publish-info">
@@ -772,13 +911,24 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            L Q
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hadoop/" class="post-category">
+                                    Hadoop
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9F%BA%E4%BA%8EZK%E7%9A%84%E9%AB%98%E5%8F%AF%E7%94%A8%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%89%E8%A3%85/">
+                        <span class="chip bg-color">基于ZK的高可用伪分布式安装</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
