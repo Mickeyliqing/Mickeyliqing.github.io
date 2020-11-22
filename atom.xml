@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mickeyliqing.github.io/"/>
-  <updated>2020-11-15T10:56:19.411Z</updated>
+  <updated>2020-11-22T08:22:58.055Z</updated>
   <id>http://mickeyliqing.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flume实际操作</title>
+    <link href="http://mickeyliqing.github.io/2020/11/22/flume-shi-ji-cao-zuo/"/>
+    <id>http://mickeyliqing.github.io/2020/11/22/flume-shi-ji-cao-zuo/</id>
+    <published>2020-11-22T08:22:12.000Z</published>
+    <updated>2020-11-22T08:22:58.055Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Flume-实际操作&quot;&gt;&lt;a href=&quot;#Flume-实际操作&quot; class=&quot;headerlink&quot; title=&quot;Flume_实际操作&quot;&gt;&lt;/a&gt;Flume_实际操作&lt;/h1&gt;&lt;h2 id=&quot;01：监听文件内容&quot;&gt;&lt;a href=&quot;#01：监听文件内容&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Flume" scheme="http://Mickeyliqing.github.io/categories/Flume/"/>
+    
+    
+      <category term="Flume 实际操作" scheme="http://Mickeyliqing.github.io/tags/Flume-%E5%AE%9E%E9%99%85%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flume基础</title>
+    <link href="http://mickeyliqing.github.io/2020/11/22/flume-ji-chu/"/>
+    <id>http://mickeyliqing.github.io/2020/11/22/flume-ji-chu/</id>
+    <published>2020-11-22T08:19:17.000Z</published>
+    <updated>2020-11-22T08:21:46.442Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Flume-基础&quot;&gt;&lt;a href=&quot;#Flume-基础&quot; class=&quot;headerlink&quot; title=&quot;Flume_基础&quot;&gt;&lt;/a&gt;Flume_基础&lt;/h1&gt;&lt;h2 id=&quot;Flume的定义&quot;&gt;&lt;a href=&quot;#Flume的定义&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Flume" scheme="http://Mickeyliqing.github.io/categories/Flume/"/>
+    
+    
+      <category term="Flume 基础" scheme="http://Mickeyliqing.github.io/tags/Flume-%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>Hadoop_支持LZO压缩</title>
