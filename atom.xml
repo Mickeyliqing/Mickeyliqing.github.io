@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mickeyliqing.github.io/"/>
-  <updated>2020-12-29T12:40:38.731Z</updated>
+  <updated>2020-12-29T13:05:39.220Z</updated>
   <id>http://mickeyliqing.github.io/</id>
   
   <author>
@@ -15,6 +15,369 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SparkStreaming_MySQL</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/sparkstreaming-mysql/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/sparkstreaming-mysql/</id>
+    <published>2020-12-29T13:05:10.000Z</published>
+    <updated>2020-12-29T13:05:39.220Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SparkStreaming-MySQL&quot;&gt;&lt;a href=&quot;#SparkStreaming-MySQL&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SparkStreaming" scheme="http://Mickeyliqing.github.io/categories/SparkStreaming/"/>
+    
+    
+      <category term="SparkStreaming" scheme="http://Mickeyliqing.github.io/tags/SparkStreaming/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SparkStreaming_Kafka</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/sparkstreaming-kafka/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/sparkstreaming-kafka/</id>
+    <published>2020-12-29T13:04:05.000Z</published>
+    <updated>2020-12-29T13:04:42.365Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SparkStreaming-Kafka&quot;&gt;&lt;a href=&quot;#SparkStreaming-Kafka&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SparkStreaming" scheme="http://Mickeyliqing.github.io/categories/SparkStreaming/"/>
+    
+    
+      <category term="SparkStreaming" scheme="http://Mickeyliqing.github.io/tags/SparkStreaming/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SparkStreaming_HDFS</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/sparkstreaming-hdfs/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/sparkstreaming-hdfs/</id>
+    <published>2020-12-29T13:03:16.000Z</published>
+    <updated>2020-12-29T13:03:50.023Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SparkStreaming-HDFS&quot;&gt;&lt;a href=&quot;#SparkStreaming-HDFS&quot; class=&quot;headerlink&quot; title=&quot;SparkStreaming_HDFS&quot;&gt;&lt;/a&gt;SparkStreaming_HDFS&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SparkStreaming" scheme="http://Mickeyliqing.github.io/categories/SparkStreaming/"/>
+    
+    
+      <category term="SparkStreaming" scheme="http://Mickeyliqing.github.io/tags/SparkStreaming/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SparkSQL_数据结构</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/sparksql-shu-ju-jie-gou/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/sparksql-shu-ju-jie-gou/</id>
+    <published>2020-12-29T13:00:54.000Z</published>
+    <updated>2020-12-29T13:02:42.705Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SparkSQL-数据结构&quot;&gt;&lt;a href=&quot;#SparkSQL-数据结构&quot; class=&quot;headerlink&quot; title=&quot;SparkSQL_数据结构&quot;&gt;&lt;/a&gt;SparkSQL_数据结构&lt;/h1&gt;&lt;h2 id=&quot;DataFrame&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SparkSQL" scheme="http://Mickeyliqing.github.io/categories/SparkSQL/"/>
+    
+    
+      <category term="SparkSQL" scheme="http://Mickeyliqing.github.io/tags/SparkSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SparkSQL_使用</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/sparksql-shi-yong/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/sparksql-shi-yong/</id>
+    <published>2020-12-29T12:59:49.000Z</published>
+    <updated>2020-12-29T13:00:33.674Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SparkSQL-使用&quot;&gt;&lt;a href=&quot;#SparkSQL-使用&quot; class=&quot;headerlink&quot; title=&quot;SparkSQL_使用&quot;&gt;&lt;/a&gt;SparkSQL_使用&lt;/h1&gt;&lt;h2 id=&quot;创建-SparkSession&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SparkSQL" scheme="http://Mickeyliqing.github.io/categories/SparkSQL/"/>
+    
+    
+      <category term="SparkSQL" scheme="http://Mickeyliqing.github.io/tags/SparkSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SparkSQL_TXT</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/sparksql-txt/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/sparksql-txt/</id>
+    <published>2020-12-29T12:58:50.000Z</published>
+    <updated>2020-12-29T12:59:29.361Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SparkSQL-TXT&quot;&gt;&lt;a href=&quot;#SparkSQL-TXT&quot; class=&quot;headerlink&quot; title=&quot;SparkSQL_TXT&quot;&gt;&lt;/a&gt;SparkSQL_TXT&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre
+        
+      
+    
+    </summary>
+    
+    
+      <category term="TXT" scheme="http://Mickeyliqing.github.io/categories/TXT/"/>
+    
+    
+      <category term="SparkSQL" scheme="http://Mickeyliqing.github.io/tags/SparkSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SparkSQL_JSON</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/sparksql-json/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/sparksql-json/</id>
+    <published>2020-12-29T12:57:51.000Z</published>
+    <updated>2020-12-29T12:58:36.237Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SparkSQL-JSON&quot;&gt;&lt;a href=&quot;#SparkSQL-JSON&quot; class=&quot;headerlink&quot; title=&quot;SparkSQL_JSON&quot;&gt;&lt;/a&gt;SparkSQL_JSON&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JSON" scheme="http://Mickeyliqing.github.io/categories/JSON/"/>
+    
+    
+      <category term="SparkSQL" scheme="http://Mickeyliqing.github.io/tags/SparkSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SparkSQL_JDBC</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/sparksql-jdbc/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/sparksql-jdbc/</id>
+    <published>2020-12-29T12:57:05.000Z</published>
+    <updated>2020-12-29T12:57:35.812Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SparkSQL-JDBC&quot;&gt;&lt;a href=&quot;#SparkSQL-JDBC&quot; class=&quot;headerlink&quot; title=&quot;SparkSQL_JDBC&quot;&gt;&lt;/a&gt;SparkSQL_JDBC&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JDBC" scheme="http://Mickeyliqing.github.io/categories/JDBC/"/>
+    
+    
+      <category term="SparkSQL" scheme="http://Mickeyliqing.github.io/tags/SparkSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SparkSQL_Hive</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/sparksql-hive/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/sparksql-hive/</id>
+    <published>2020-12-29T12:54:58.000Z</published>
+    <updated>2020-12-29T12:56:46.112Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SparkSQL-Hive&quot;&gt;&lt;a href=&quot;#SparkSQL-Hive&quot; class=&quot;headerlink&quot; title=&quot;SparkSQL_Hive&quot;&gt;&lt;/a&gt;SparkSQL_Hive&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Hive" scheme="http://Mickeyliqing.github.io/categories/Hive/"/>
+    
+    
+      <category term="SparkSQL" scheme="http://Mickeyliqing.github.io/tags/SparkSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spark_PairRDD</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/spark-pairrdd/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/spark-pairrdd/</id>
+    <published>2020-12-29T12:52:18.000Z</published>
+    <updated>2020-12-29T12:54:09.594Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Spark-PairRDD&quot;&gt;&lt;a href=&quot;#Spark-PairRDD&quot; class=&quot;headerlink&quot; title=&quot;Spark_PairRDD&quot;&gt;&lt;/a&gt;Spark_PairRDD&lt;/h1&gt;&lt;h2 id=&quot;什么是-Pair-RDD&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SparkCore" scheme="http://Mickeyliqing.github.io/categories/SparkCore/"/>
+    
+    
+      <category term="SparkCore" scheme="http://Mickeyliqing.github.io/tags/SparkCore/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spark_提交模式</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/spark-ti-jiao-mo-shi/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/spark-ti-jiao-mo-shi/</id>
+    <published>2020-12-29T12:51:13.000Z</published>
+    <updated>2020-12-29T12:51:49.774Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Spark-提交模式&quot;&gt;&lt;a href=&quot;#Spark-提交模式&quot; class=&quot;headerlink&quot; title=&quot;Spark_提交模式&quot;&gt;&lt;/a&gt;Spark_提交模式&lt;/h1&gt;&lt;h2 id=&quot;作业提交&quot;&gt;&lt;a href=&quot;#作业提交&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SparkCore" scheme="http://Mickeyliqing.github.io/categories/SparkCore/"/>
+    
+    
+      <category term="SparkCore" scheme="http://Mickeyliqing.github.io/tags/SparkCore/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spark_算子</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/spark-suan-zi/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/spark-suan-zi/</id>
+    <published>2020-12-29T12:49:38.000Z</published>
+    <updated>2020-12-29T12:50:43.642Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Spark-算子&quot;&gt;&lt;a href=&quot;#Spark-算子&quot; class=&quot;headerlink&quot; title=&quot;Spark_算子&quot;&gt;&lt;/a&gt;Spark_算子&lt;/h1&gt;&lt;h2 id=&quot;Transformation&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SparkCore" scheme="http://Mickeyliqing.github.io/categories/SparkCore/"/>
+    
+    
+      <category term="SparkCore" scheme="http://Mickeyliqing.github.io/tags/SparkCore/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spark_使用</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/spark-shi-yong/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/spark-shi-yong/</id>
+    <published>2020-12-29T12:48:04.000Z</published>
+    <updated>2020-12-29T12:49:17.484Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Spark-使用&quot;&gt;&lt;a href=&quot;#Spark-使用&quot; class=&quot;headerlink&quot; title=&quot;Spark_使用&quot;&gt;&lt;/a&gt;Spark_使用&lt;/h1&gt;&lt;h2 id=&quot;使用代码&quot;&gt;&lt;a href=&quot;#使用代码&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SparkCore" scheme="http://Mickeyliqing.github.io/categories/SparkCore/"/>
+    
+    
+      <category term="SparkCore" scheme="http://Mickeyliqing.github.io/tags/SparkCore/"/>
+    
+  </entry>
   
   <entry>
     <title>Spark_基础</title>
@@ -202,87 +565,6 @@
     
     
       <category term="常见错误" scheme="http://Mickeyliqing.github.io/tags/%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hadoop_YARN</title>
-    <link href="http://mickeyliqing.github.io/2020/11/15/hadoop-yarn/"/>
-    <id>http://mickeyliqing.github.io/2020/11/15/hadoop-yarn/</id>
-    <published>2020-11-15T10:49:25.000Z</published>
-    <updated>2020-11-15T10:51:02.382Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Hadoop-YARN&quot;&gt;&lt;a href=&quot;#Hadoop-YARN&quot; class=&quot;headerlink&quot; title=&quot;Hadoop_YARN&quot;&gt;&lt;/a&gt;Hadoop_YARN&lt;/h1&gt;&lt;h2 id=&quot;YARN主要架构&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Hadoop" scheme="http://Mickeyliqing.github.io/categories/Hadoop/"/>
-    
-    
-      <category term="YARN" scheme="http://Mickeyliqing.github.io/tags/YARN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hadoop_MapReduce</title>
-    <link href="http://mickeyliqing.github.io/2020/11/15/hadoop-mapreduce/"/>
-    <id>http://mickeyliqing.github.io/2020/11/15/hadoop-mapreduce/</id>
-    <published>2020-11-15T10:45:31.000Z</published>
-    <updated>2020-11-15T10:46:28.389Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Hadoop-MapReduce&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce&quot; class=&quot;headerlink&quot; title=&quot;Hadoop_MapReduce&quot;&gt;&lt;/a&gt;Hadoop_MapReduce&lt;/h1&gt;&lt;h2
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Hadoop" scheme="http://Mickeyliqing.github.io/categories/Hadoop/"/>
-    
-    
-      <category term="MapReduce" scheme="http://Mickeyliqing.github.io/tags/MapReduce/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hadoop_HDFS</title>
-    <link href="http://mickeyliqing.github.io/2020/11/15/hadoop-hdfs/"/>
-    <id>http://mickeyliqing.github.io/2020/11/15/hadoop-hdfs/</id>
-    <published>2020-11-15T08:03:29.000Z</published>
-    <updated>2020-11-15T08:48:49.882Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Hadoop基础&quot;&gt;&lt;a href=&quot;#Hadoop基础&quot; class=&quot;headerlink&quot; title=&quot;Hadoop基础&quot;&gt;&lt;/a&gt;Hadoop基础&lt;/h1&gt;&lt;h2 id=&quot;Hadoop&quot;&gt;&lt;a href=&quot;#Hadoop&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Hadoop" scheme="http://Mickeyliqing.github.io/categories/Hadoop/"/>
-    
-    
-      <category term="HDFS" scheme="http://Mickeyliqing.github.io/tags/HDFS/"/>
     
   </entry>
   
