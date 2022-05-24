@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>L Q</title>
+  
+  <subtitle>L Q</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://mickeyliqing.github.io/"/>
+  <updated>2021-09-02T07:50:18.764Z</updated>
+  <id>http://mickeyliqing.github.io/</id>
+  
+  <author>
+    <name>L Q</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MYSQL_调优</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-diao-you/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/mysql-diao-you/</id>
+    <published>2021-09-02T07:49:43.000Z</published>
+    <updated>2021-09-02T07:50:18.764Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;MySQL-调优&quot;&gt;&lt;a href=&quot;#MySQL-调优&quot; class=&quot;headerlink&quot; title=&quot;MySQL_调优&quot;&gt;&lt;/a&gt;MySQL_调优&lt;/h1&gt;&lt;h3 id=&quot;创建索引&quot;&gt;&lt;a href=&quot;#创建索引&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MYSQL教程Vol_006</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-006/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-006/</id>
+    <published>2021-09-02T07:48:55.000Z</published>
+    <updated>2021-09-02T07:49:10.270Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;其实在实际的使用过程中会发现，有些时候对于建好的数据库表单需要：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;增加字段&lt;/li&gt;
+&lt;li&gt;删除字段&lt;/li&gt;
+&lt;li&gt;修改字段&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;而这些操作又需要保证不影响原本的表单结构。&lt;/p&gt;
+&lt;p&gt;那么接下来就简单学习一下吧！&lt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MYSQL教程Vol_005</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-005/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-005/</id>
+    <published>2021-09-02T07:48:23.000Z</published>
+    <updated>2021-09-02T07:48:39.137Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;问题1：构造一个触发器-audit-log，在向-employees-表中插入一条数据的时候，触发插入相关的数据到-film-表中。&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MYSQL教程Vol_004</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-004/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-004/</id>
+    <published>2021-09-02T07:47:55.000Z</published>
+    <updated>2021-09-02T07:48:14.206Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;一直在学习查询，今天看点其它的，就当放松一下了。&lt;/p&gt;
+&lt;h4 id=&quot;问题1：将-employees-表的所有员工的-last-name-和-first-name-拼接起来作为Name，中间以一个空格区分。&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MYSQL教程Vol_003</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-003/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-003/</id>
+    <published>2021-09-02T07:47:23.000Z</published>
+    <updated>2021-09-02T07:47:42.957Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;问题-01：获取所有部门中当前员工薪水最高的相关信息，给出dept-no-emp-no-以及其对应的-salary。&quot;&gt;&lt;a href=&quot;#问题-01：获取所有部门中当前员工薪水最高的相关信息，给出dept-no-emp-no-以及其对应的-salary。&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MYSQL教程Vol_002</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-002/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-002/</id>
+    <published>2021-09-02T07:46:50.000Z</published>
+    <updated>2021-09-02T07:47:14.472Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;学习知识最好的方式是什么？&lt;/p&gt;
+&lt;p&gt;那就是用起来，只有用起来，知识才能是自己的。至于用的好不好，精不精，那不重要。&lt;/p&gt;
+&lt;p&gt;原因很简单：时间跨度拉长，熟练程度自然而然就上去了。所以这不是问题。&lt;/p&gt;
+&lt;p&gt;而学习技术最好的使用方式就是去解决问题。这里也就是上面
+        
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MYSQL教程Vol_001</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-001/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-001/</id>
+    <published>2021-09-02T07:46:06.000Z</published>
+    <updated>2021-09-02T07:46:34.761Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前期准备&quot;&gt;&lt;a href=&quot;#前期准备&quot; class=&quot;headerlink&quot; title=&quot;前期准备&quot;&gt;&lt;/a&gt;前期准备&lt;/h1&gt;&lt;p&gt;这是一部简洁的 &lt;code&gt;Mysql&lt;/code&gt; 教程。&lt;/p&gt;
+&lt;p&gt;我们在一开始就默认你已经在本地安装好了
+        
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MYSQL教程Vol_000</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-000/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-000/</id>
+    <published>2021-09-02T07:45:15.000Z</published>
+    <updated>2021-09-02T07:45:50.725Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;建表语句&quot;&gt;&lt;a href=&quot;#建表语句&quot; class=&quot;headerlink&quot; title=&quot;建表语句&quot;&gt;&lt;/a&gt;建表语句&lt;/h1&gt;&lt;h2 id=&quot;建表语句-01&quot;&gt;&lt;a href=&quot;#建表语句-01&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis_基础知识</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/redis-ji-chu-zhi-shi/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/redis-ji-chu-zhi-shi/</id>
+    <published>2021-09-02T07:43:20.000Z</published>
+    <updated>2021-09-02T07:43:51.588Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Redis-基础知识&quot;&gt;&lt;a href=&quot;#Redis-基础知识&quot; class=&quot;headerlink&quot; title=&quot;Redis 基础知识&quot;&gt;&lt;/a&gt;Redis 基础知识&lt;/h1&gt;&lt;h2 id=&quot;Redis-基础数据结构&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Redis" scheme="http://Mickeyliqing.github.io/categories/Redis/"/>
+    
+    
+      <category term="Redis" scheme="http://Mickeyliqing.github.io/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL_基础知识</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-ji-chu-zhi-shi/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/mysql-ji-chu-zhi-shi/</id>
+    <published>2021-09-02T07:42:33.000Z</published>
+    <updated>2021-09-02T07:42:59.877Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;MySQL-基础&quot;&gt;&lt;a href=&quot;#MySQL-基础&quot; class=&quot;headerlink&quot; title=&quot;MySQL 基础&quot;&gt;&lt;/a&gt;MySQL 基础&lt;/h1&gt;&lt;h2 id=&quot;MySQL-基础知识&quot;&gt;&lt;a href=&quot;#MySQL-基础知识&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA框架_Spring</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/java-kuang-jia-spring/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/java-kuang-jia-spring/</id>
+    <published>2021-09-02T07:41:42.000Z</published>
+    <updated>2021-09-02T07:42:08.837Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Spring&quot;&gt;&lt;a href=&quot;#Spring&quot; class=&quot;headerlink&quot; title=&quot;Spring&quot;&gt;&lt;/a&gt;Spring&lt;/h1&gt;&lt;h2 id=&quot;Spring-Bean-的生命周期&quot;&gt;&lt;a href=&quot;#Spring-Bean-的生命周期&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JAVA 框架" scheme="http://Mickeyliqing.github.io/categories/JAVA-%E6%A1%86%E6%9E%B6/"/>
+    
+    
+      <category term="JAVA 框架" scheme="http://Mickeyliqing.github.io/tags/JAVA-%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA_基础知识</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/java-ji-chu-zhi-shi/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/java-ji-chu-zhi-shi/</id>
+    <published>2021-09-02T07:40:45.000Z</published>
+    <updated>2021-09-02T07:41:16.390Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JAVA-的基础知识&quot;&gt;&lt;a href=&quot;#JAVA-的基础知识&quot; class=&quot;headerlink&quot; title=&quot;JAVA 的基础知识&quot;&gt;&lt;/a&gt;JAVA 的基础知识&lt;/h1&gt;&lt;h2 id=&quot;重载和重写的区别。&quot;&gt;&lt;a href=&quot;#重载和重写的区别。&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JAVA 基础" scheme="http://Mickeyliqing.github.io/categories/JAVA-%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JAVA 基础" scheme="http://Mickeyliqing.github.io/tags/JAVA-%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA_多线程</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/java-duo-xian-cheng/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/java-duo-xian-cheng/</id>
+    <published>2021-09-02T07:38:47.000Z</published>
+    <updated>2021-09-02T07:40:22.410Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JAVA-多线程&quot;&gt;&lt;a href=&quot;#JAVA-多线程&quot; class=&quot;headerlink&quot; title=&quot;JAVA 多线程&quot;&gt;&lt;/a&gt;JAVA 多线程&lt;/h1&gt;&lt;h2 id=&quot;线程的状态&quot;&gt;&lt;a href=&quot;#线程的状态&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JAVA 多线程" scheme="http://Mickeyliqing.github.io/categories/JAVA-%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+    
+      <category term="JAVA 多线程" scheme="http://Mickeyliqing.github.io/tags/JAVA-%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP_基础</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/http-ji-chu/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/http-ji-chu/</id>
+    <published>2021-09-02T07:37:35.000Z</published>
+    <updated>2021-09-02T07:38:27.283Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;HTTP-基础知识&quot;&gt;&lt;a href=&quot;#HTTP-基础知识&quot; class=&quot;headerlink&quot; title=&quot;HTTP 基础知识&quot;&gt;&lt;/a&gt;HTTP 基础知识&lt;/h1&gt;&lt;h2 id=&quot;HTTP-协议&quot;&gt;&lt;a href=&quot;#HTTP-协议&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="HTTP" scheme="http://Mickeyliqing.github.io/categories/HTTP/"/>
+    
+    
+      <category term="HTTP" scheme="http://Mickeyliqing.github.io/tags/HTTP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>树</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/shu/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/shu/</id>
+    <published>2021-09-02T07:24:17.000Z</published>
+    <updated>2021-09-02T07:24:48.270Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;树-05&quot;&gt;&lt;a href=&quot;#树-05&quot; class=&quot;headerlink&quot; title=&quot;树_05&quot;&gt;&lt;/a&gt;树_05&lt;/h1&gt;&lt;h2 id=&quot;关于二叉树的定义&quot;&gt;&lt;a href=&quot;#关于二叉树的定义&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="树" scheme="http://Mickeyliqing.github.io/categories/%E6%A0%91/"/>
+    
+    
+      <category term="树" scheme="http://Mickeyliqing.github.io/tags/%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二叉树的遍历方式</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/er-cha-shu-de-bian-li-fang-shi/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/er-cha-shu-de-bian-li-fang-shi/</id>
+    <published>2021-09-02T07:23:21.000Z</published>
+    <updated>2021-09-02T07:23:51.783Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;二叉树的遍历方式-04&quot;&gt;&lt;a href=&quot;#二叉树的遍历方式-04&quot; class=&quot;headerlink&quot; title=&quot;二叉树的遍历方式_04&quot;&gt;&lt;/a&gt;二叉树的遍历方式_04&lt;/h1&gt;&lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="二叉树遍历" scheme="http://Mickeyliqing.github.io/categories/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/"/>
+    
+    
+      <category term="二叉树遍历" scheme="http://Mickeyliqing.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>什么是递归</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/shi-me-shi-di-gui/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/shi-me-shi-di-gui/</id>
+    <published>2021-09-02T07:22:25.000Z</published>
+    <updated>2021-09-02T07:22:56.456Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;什么是递归-03&quot;&gt;&lt;a href=&quot;#什么是递归-03&quot; class=&quot;headerlink&quot; title=&quot;什么是递归_03&quot;&gt;&lt;/a&gt;什么是递归_03&lt;/h1&gt;&lt;h2 id=&quot;什么是递归&quot;&gt;&lt;a href=&quot;#什么是递归&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="递归" scheme="http://Mickeyliqing.github.io/categories/%E9%80%92%E5%BD%92/"/>
+    
+    
+      <category term="递归" scheme="http://Mickeyliqing.github.io/tags/%E9%80%92%E5%BD%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>选择_冒泡_快速_插入</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/xuan-ze-mou-pao-kuai-su-cha-ru/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/xuan-ze-mou-pao-kuai-su-cha-ru/</id>
+    <published>2021-09-02T07:20:19.000Z</published>
+    <updated>2021-09-02T07:21:49.140Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;选择-冒泡-快速-插入&quot;&gt;&lt;a href=&quot;#选择-冒泡-快速-插入&quot; class=&quot;headerlink&quot; title=&quot;选择 _ 冒泡 _ 快速 _ 插入&quot;&gt;&lt;/a&gt;选择 _ 冒泡 _ 快速 _ 插入&lt;/h1&gt;&lt;h2 id=&quot;选择排序&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="排序算法" scheme="http://Mickeyliqing.github.io/categories/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="排序算法" scheme="http://Mickeyliqing.github.io/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构</title>
+    <link href="http://mickeyliqing.github.io/2021/09/02/shu-ju-jie-gou/"/>
+    <id>http://mickeyliqing.github.io/2021/09/02/shu-ju-jie-gou/</id>
+    <published>2021-09-02T07:18:22.000Z</published>
+    <updated>2021-09-02T07:19:33.714Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;数据结构&quot;&gt;&lt;a href=&quot;#数据结构&quot; class=&quot;headerlink&quot; title=&quot;数据结构&quot;&gt;&lt;/a&gt;数据结构&lt;/h1&gt;&lt;h2 id=&quot;数据结构的存储方式&quot;&gt;&lt;a href=&quot;#数据结构的存储方式&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="http://Mickeyliqing.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="http://Mickeyliqing.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kafka_彻底删除Topic</title>
+    <link href="http://mickeyliqing.github.io/2020/12/29/kafka-che-di-shan-chu-topic/"/>
+    <id>http://mickeyliqing.github.io/2020/12/29/kafka-che-di-shan-chu-topic/</id>
+    <published>2020-12-29T13:24:35.000Z</published>
+    <updated>2020-12-29T13:25:07.381Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Kafka-彻底删除Topic&quot;&gt;&lt;a href=&quot;#Kafka-彻底删除Topic&quot; class=&quot;headerlink&quot; title=&quot;Kafka_彻底删除Topic&quot;&gt;&lt;/a&gt;Kafka_彻底删除Topic&lt;/h1&gt;&lt;h3 id=&quot;出现的问题：&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Kafka" scheme="http://Mickeyliqing.github.io/categories/Kafka/"/>
+    
+    
+      <category term="Kafka" scheme="http://Mickeyliqing.github.io/tags/Kafka/"/>
+    
+  </entry>
+  
+</feed>
