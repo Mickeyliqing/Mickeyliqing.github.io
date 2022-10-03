@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mickeyliqing.github.io/"/>
-  <updated>2022-05-24T14:35:58.324Z</updated>
+  <updated>2022-10-03T11:57:44.711Z</updated>
   <id>http://mickeyliqing.github.io/</id>
   
   <author>
@@ -15,6 +15,141 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Kafka_总结</title>
+    <link href="http://mickeyliqing.github.io/2022/10/03/kafka-zong-jie/"/>
+    <id>http://mickeyliqing.github.io/2022/10/03/kafka-zong-jie/</id>
+    <published>2022-10-03T11:54:34.000Z</published>
+    <updated>2022-10-03T11:57:44.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Kafka&quot;&gt;&lt;a href=&quot;#Kafka&quot; class=&quot;headerlink&quot; title=&quot;Kafka&quot;&gt;&lt;/a&gt;Kafka&lt;/h1&gt;&lt;h2 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Kafka" scheme="http://Mickeyliqing.github.io/categories/Kafka/"/>
+    
+    
+      <category term="Kafka" scheme="http://Mickeyliqing.github.io/tags/Kafka/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MYSQL_高级</title>
+    <link href="http://mickeyliqing.github.io/2022/10/03/mysql-gao-ji/"/>
+    <id>http://mickeyliqing.github.io/2022/10/03/mysql-gao-ji/</id>
+    <published>2022-10-03T11:52:19.000Z</published>
+    <updated>2022-10-03T11:55:28.725Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;高性能-MySQL&quot;&gt;&lt;a href=&quot;#高性能-MySQL&quot; class=&quot;headerlink&quot; title=&quot;高性能 MySQL&quot;&gt;&lt;/a&gt;高性能 MySQL&lt;/h1&gt;&lt;h2 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA_多线程_总结</title>
+    <link href="http://mickeyliqing.github.io/2022/10/03/java-duo-xian-cheng-zong-jie/"/>
+    <id>http://mickeyliqing.github.io/2022/10/03/java-duo-xian-cheng-zong-jie/</id>
+    <published>2022-10-03T11:47:33.000Z</published>
+    <updated>2022-10-03T11:50:16.881Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;多线程&quot;&gt;&lt;a href=&quot;#多线程&quot; class=&quot;headerlink&quot; title=&quot;多线程&quot;&gt;&lt;/a&gt;多线程&lt;/h1&gt;&lt;h2 id=&quot;硬件支持&quot;&gt;&lt;a href=&quot;#硬件支持&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JAVA 多线程" scheme="http://Mickeyliqing.github.io/categories/JAVA-%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+    
+      <category term="JAVA 多线程" scheme="http://Mickeyliqing.github.io/tags/JAVA-%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot_Secret</title>
+    <link href="http://mickeyliqing.github.io/2022/10/03/springboot-secret/"/>
+    <id>http://mickeyliqing.github.io/2022/10/03/springboot-secret/</id>
+    <published>2022-10-03T11:42:17.000Z</published>
+    <updated>2022-10-03T11:43:48.248Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringBoot-Secret&quot;&gt;&lt;a href=&quot;#SpringBoot-Secret&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot_Secret&quot;&gt;&lt;/a&gt;SpringBoot_Secret&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot_Swagger</title>
+    <link href="http://mickeyliqing.github.io/2022/10/03/springboot-swagger/"/>
+    <id>http://mickeyliqing.github.io/2022/10/03/springboot-swagger/</id>
+    <published>2022-10-03T11:39:33.000Z</published>
+    <updated>2022-10-03T11:41:16.167Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringBoot-Swagger&quot;&gt;&lt;a href=&quot;#SpringBoot-Swagger&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot_Swagger&quot;&gt;&lt;/a&gt;SpringBoot_Swagger&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot_Validation</title>
@@ -415,146 +550,6 @@
 &lt;/ul&gt;
 &lt;p&gt;而这些操作又需要保证不影响原本的表单结构。&lt;/p&gt;
 &lt;p&gt;那么接下来就简单学习一下吧！&lt;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MYSQL教程Vol_005</title>
-    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-005/"/>
-    <id>http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-005/</id>
-    <published>2021-09-02T07:48:23.000Z</published>
-    <updated>2021-09-02T07:48:39.137Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;问题1：构造一个触发器-audit-log，在向-employees-表中插入一条数据的时候，触发插入相关的数据到-film-表中。&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MYSQL教程Vol_004</title>
-    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-004/"/>
-    <id>http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-004/</id>
-    <published>2021-09-02T07:47:55.000Z</published>
-    <updated>2021-09-02T07:48:14.206Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;一直在学习查询，今天看点其它的，就当放松一下了。&lt;/p&gt;
-&lt;h4 id=&quot;问题1：将-employees-表的所有员工的-last-name-和-first-name-拼接起来作为Name，中间以一个空格区分。&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MYSQL教程Vol_003</title>
-    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-003/"/>
-    <id>http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-003/</id>
-    <published>2021-09-02T07:47:23.000Z</published>
-    <updated>2021-09-02T07:47:42.957Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;问题-01：获取所有部门中当前员工薪水最高的相关信息，给出dept-no-emp-no-以及其对应的-salary。&quot;&gt;&lt;a href=&quot;#问题-01：获取所有部门中当前员工薪水最高的相关信息，给出dept-no-emp-no-以及其对应的-salary。&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MYSQL教程Vol_002</title>
-    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-002/"/>
-    <id>http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-002/</id>
-    <published>2021-09-02T07:46:50.000Z</published>
-    <updated>2021-09-02T07:47:14.472Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;学习知识最好的方式是什么？&lt;/p&gt;
-&lt;p&gt;那就是用起来，只有用起来，知识才能是自己的。至于用的好不好，精不精，那不重要。&lt;/p&gt;
-&lt;p&gt;原因很简单：时间跨度拉长，熟练程度自然而然就上去了。所以这不是问题。&lt;/p&gt;
-&lt;p&gt;而学习技术最好的使用方式就是去解决问题。这里也就是上面
-        
-      
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MYSQL教程Vol_001</title>
-    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-001/"/>
-    <id>http://mickeyliqing.github.io/2021/09/02/mysql-jiao-cheng-vol-001/</id>
-    <published>2021-09-02T07:46:06.000Z</published>
-    <updated>2021-09-02T07:46:34.761Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;前期准备&quot;&gt;&lt;a href=&quot;#前期准备&quot; class=&quot;headerlink&quot; title=&quot;前期准备&quot;&gt;&lt;/a&gt;前期准备&lt;/h1&gt;&lt;p&gt;这是一部简洁的 &lt;code&gt;Mysql&lt;/code&gt; 教程。&lt;/p&gt;
-&lt;p&gt;我们在一开始就默认你已经在本地安装好了
         
       
     
