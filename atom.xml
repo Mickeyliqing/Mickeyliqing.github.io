@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mickeyliqing.github.io/"/>
-  <updated>2022-10-18T12:28:08.471Z</updated>
+  <updated>2022-10-21T12:20:56.248Z</updated>
   <id>http://mickeyliqing.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Redis_进阶</title>
+    <link href="http://mickeyliqing.github.io/2022/10/21/redis-jin-jie/"/>
+    <id>http://mickeyliqing.github.io/2022/10/21/redis-jin-jie/</id>
+    <published>2022-10-21T12:19:31.000Z</published>
+    <updated>2022-10-21T12:20:56.248Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Redis-进阶&quot;&gt;&lt;a href=&quot;#Redis-进阶&quot; class=&quot;headerlink&quot; title=&quot;Redis_进阶&quot;&gt;&lt;/a&gt;Redis_进阶&lt;/h1&gt;&lt;h2 id=&quot;基础数据结构&quot;&gt;&lt;a href=&quot;#基础数据结构&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Redis" scheme="http://Mickeyliqing.github.io/categories/Redis/"/>
+    
+    
+      <category term="Redis" scheme="http://Mickeyliqing.github.io/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式</title>
@@ -526,33 +553,6 @@
     
     
       <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MYSQL_调优</title>
-    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-diao-you/"/>
-    <id>http://mickeyliqing.github.io/2021/09/02/mysql-diao-you/</id>
-    <published>2021-09-02T07:49:43.000Z</published>
-    <updated>2021-09-02T07:50:18.764Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;MySQL-调优&quot;&gt;&lt;a href=&quot;#MySQL-调优&quot; class=&quot;headerlink&quot; title=&quot;MySQL_调优&quot;&gt;&lt;/a&gt;MySQL_调优&lt;/h1&gt;&lt;h3 id=&quot;创建索引&quot;&gt;&lt;a href=&quot;#创建索引&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
     
   </entry>
   
