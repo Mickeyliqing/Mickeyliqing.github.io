@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mickeyliqing.github.io/"/>
-  <updated>2022-10-21T12:20:56.248Z</updated>
+  <updated>2022-10-31T15:49:55.189Z</updated>
   <id>http://mickeyliqing.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot-Xxl-Job</title>
+    <link href="http://mickeyliqing.github.io/2022/10/31/springboot-xxl-job/"/>
+    <id>http://mickeyliqing.github.io/2022/10/31/springboot-xxl-job/</id>
+    <published>2022-10-31T15:48:31.000Z</published>
+    <updated>2022-10-31T15:49:55.189Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringBoot-Xxl-Job&quot;&gt;&lt;a href=&quot;#SpringBoot-Xxl-Job&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot_Xxl-Job&quot;&gt;&lt;/a&gt;SpringBoot_Xxl-Job&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
+    
+  </entry>
   
   <entry>
     <title>Redis_进阶</title>
@@ -516,33 +543,6 @@
         
         
           &lt;h1 id=&quot;SpringBoot-MybatisPlus-01&quot;&gt;&lt;a href=&quot;#SpringBoot-MybatisPlus-01&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot_01</title>
-    <link href="http://mickeyliqing.github.io/2022/05/24/springboot-01/"/>
-    <id>http://mickeyliqing.github.io/2022/05/24/springboot-01/</id>
-    <published>2022-05-24T14:15:27.000Z</published>
-    <updated>2022-05-24T14:20:14.932Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;SpringBoot-01&quot;&gt;&lt;a href=&quot;#SpringBoot-01&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot_01&quot;&gt;&lt;/a&gt;SpringBoot_01&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;
         
       
     
