@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mickeyliqing.github.io/"/>
-  <updated>2022-10-21T12:20:56.248Z</updated>
+  <updated>2022-11-01T11:18:14.684Z</updated>
   <id>http://mickeyliqing.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot-Xxl-Job</title>
+    <link href="http://mickeyliqing.github.io/2022/11/01/springboot-xxl-job/"/>
+    <id>http://mickeyliqing.github.io/2022/11/01/springboot-xxl-job/</id>
+    <published>2022-11-01T11:17:40.000Z</published>
+    <updated>2022-11-01T11:18:14.684Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringBoot-Xxl-Job&quot;&gt;&lt;a href=&quot;#SpringBoot-Xxl-Job&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot_Xxl-Job&quot;&gt;&lt;/a&gt;SpringBoot_Xxl-Job&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot_Elasticsearch</title>
+    <link href="http://mickeyliqing.github.io/2022/11/01/springboot-elasticsearch/"/>
+    <id>http://mickeyliqing.github.io/2022/11/01/springboot-elasticsearch/</id>
+    <published>2022-11-01T11:16:28.000Z</published>
+    <updated>2022-11-01T11:17:07.496Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringBoot-Elasticsearch&quot;&gt;&lt;a href=&quot;#SpringBoot-Elasticsearch&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
+    
+  </entry>
   
   <entry>
     <title>Redis_进阶</title>
@@ -499,60 +553,6 @@
     
     
       <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot_01</title>
-    <link href="http://mickeyliqing.github.io/2022/05/24/springboot-01/"/>
-    <id>http://mickeyliqing.github.io/2022/05/24/springboot-01/</id>
-    <published>2022-05-24T14:15:27.000Z</published>
-    <updated>2022-05-24T14:20:14.932Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;SpringBoot-01&quot;&gt;&lt;a href=&quot;#SpringBoot-01&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot_01&quot;&gt;&lt;/a&gt;SpringBoot_01&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MYSQL_调优</title>
-    <link href="http://mickeyliqing.github.io/2021/09/02/mysql-diao-you/"/>
-    <id>http://mickeyliqing.github.io/2021/09/02/mysql-diao-you/</id>
-    <published>2021-09-02T07:49:43.000Z</published>
-    <updated>2021-09-02T07:50:18.764Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;MySQL-调优&quot;&gt;&lt;a href=&quot;#MySQL-调优&quot; class=&quot;headerlink&quot; title=&quot;MySQL_调优&quot;&gt;&lt;/a&gt;MySQL_调优&lt;/h1&gt;&lt;h3 id=&quot;创建索引&quot;&gt;&lt;a href=&quot;#创建索引&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="http://Mickeyliqing.github.io/tags/MySQL/"/>
     
   </entry>
   
