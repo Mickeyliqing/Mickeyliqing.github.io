@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mickeyliqing.github.io/"/>
-  <updated>2023-03-03T05:00:56.323Z</updated>
+  <updated>2023-04-21T14:26:15.933Z</updated>
   <id>http://mickeyliqing.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot_Nacos</title>
+    <link href="http://mickeyliqing.github.io/2023/04/21/springboot-nacos/"/>
+    <id>http://mickeyliqing.github.io/2023/04/21/springboot-nacos/</id>
+    <published>2023-04-21T14:24:59.000Z</published>
+    <updated>2023-04-21T14:26:15.933Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringBoot-Nacos&quot;&gt;&lt;a href=&quot;#SpringBoot-Nacos&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot_EasyEs_Elasticsearch</title>
@@ -516,33 +543,6 @@
         
         
           &lt;h1 id=&quot;SpringBoot-MybatisPlus-03&quot;&gt;&lt;a href=&quot;#SpringBoot-MybatisPlus-03&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot_MybatisPlus_02</title>
-    <link href="http://mickeyliqing.github.io/2022/05/24/springboot-mybatisplus-02/"/>
-    <id>http://mickeyliqing.github.io/2022/05/24/springboot-mybatisplus-02/</id>
-    <published>2022-05-24T14:22:52.000Z</published>
-    <updated>2022-05-24T14:25:46.681Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;SpringBoot-MybatisPlus-02&quot;&gt;&lt;a href=&quot;#SpringBoot-MybatisPlus-02&quot; class=&quot;headerlink&quot;
         
       
     

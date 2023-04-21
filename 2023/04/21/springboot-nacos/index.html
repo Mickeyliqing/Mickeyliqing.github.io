@@ -4,12 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SpringBoot_EasyEs_Elasticsearch, L Q">
-    <meta name="description" content="SpringBoot_EasyEs_Elasticsearch第一步
-pom.xml 添加对应的架包
+    <meta name="keywords" content="SpringBoot_Nacos, L Q">
+    <meta name="description" content="SpringBoot_Nacos整个思路分为两个模块：服务的提供者和服务的消费者。
+服务提供者第一步
+pom.xml 文件中引入对应的配置
 
-&amp;lt;dependency&gt;
-    &amp;lt;groupId&gt;org.springframework.boot&amp;lt;/groupId">
+&amp;lt;properties&gt;
+    &amp;lt;java.version&gt;1.8&amp;lt;/java">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +24,7 @@ pom.xml 添加对应的架包
 
     
 
-    <title>SpringBoot_EasyEs_Elasticsearch | L Q</title>
+    <title>SpringBoot_Nacos | L Q</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -270,12 +271,12 @@ pom.xml 添加对应的架包
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SpringBoot_EasyEs_Elasticsearch</h1>
+                    <h1 class="description center-align post-title">SpringBoot_Nacos</h1>
                 </div>
             </div>
         </div>
@@ -416,7 +417,7 @@ pom.xml 添加对应的架包
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-03
+                    2023-04-21
                 </div>
                 
 
@@ -437,208 +438,195 @@ pom.xml 添加对应的架包
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="SpringBoot-EasyEs-Elasticsearch"><a href="#SpringBoot-EasyEs-Elasticsearch" class="headerlink" title="SpringBoot_EasyEs_Elasticsearch"></a>SpringBoot_EasyEs_Elasticsearch</h1><h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><ul>
-<li>pom.xml 添加对应的架包</li>
+                <h1 id="SpringBoot-Nacos"><a href="#SpringBoot-Nacos" class="headerlink" title="SpringBoot_Nacos"></a>SpringBoot_Nacos</h1><p>整个思路分为两个模块：服务的提供者和服务的消费者。</p>
+<h2 id="服务提供者"><a href="#服务提供者" class="headerlink" title="服务提供者"></a>服务提供者</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><ul>
+<li>pom.xml 文件中引入对应的配置</li>
 </ul>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--SpringBoot内集成了Elasticsearch，但此框架需要 Elasticsearch 的版本为 7.14.0，需要单独引用--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>cn.easy-es<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>easy-es-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.1.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusions</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusion</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.elasticsearch.client<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>elasticsearch-rest-high-level-client<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusion</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusion</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.elasticsearch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>elasticsearch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusion</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusions</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--单独引入 Elasticsearch 的 7.14.0 版本--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.elasticsearch.client<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>elasticsearch-rest-high-level-client<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>7.14.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.elasticsearch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>elasticsearch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>7.14.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>java.version</span><span class="token punctuation">></span></span>1.8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>java.version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring-cloud.version</span><span class="token punctuation">></span></span>2020.0.4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring-cloud.version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring-cloud-alibaba.version</span><span class="token punctuation">></span></span>2021.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring-cloud-alibaba.version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.projectlombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>lombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.18.26<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
-<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><ul>
-<li>启动类上添加扫描路径</li>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-starter-alibaba-nacos-discovery<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencyManagement</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-dependencies<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>${spring-cloud.version}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>type</span><span class="token punctuation">></span></span>pom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>type</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>import<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-alibaba-dependencies<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>${spring-cloud-alibaba.version}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>type</span><span class="token punctuation">></span></span>pom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>type</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>import<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencyManagement</span><span class="token punctuation">></span></span></code></pre>
+<p><strong>注意：如果版本不对应，项目无法启动。</strong></p>
+<blockquote>
+<p>这里的 SpringBoot 对应的版本是 ：2.5.7。</p>
+<p>对应的 SpringCloud 版本是：2020.0.4。</p>
+<p>对应的 SpringCloudAlibaba 版本是：2021.1。</p>
+</blockquote>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><ul>
+<li>配置文件添加配置</li>
 </ul>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
-<span class="token comment" spellcheck="true">// ES 的扫描路径，如果项目里使用了 MP 那么 MP 的路径地址不能和 ES 的路径地址相同，否则会报错</span>
-<span class="token annotation punctuation">@EsMapperScan</span><span class="token punctuation">(</span><span class="token string">"com.example.springbooteasyeselasticsearch.dao"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringbootEasyesElasticsearchApplication</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>SpringbootEasyesElasticsearchApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><ul>
-<li>定义实体类<code>Document</code></li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
-<span class="token annotation punctuation">@AllArgsConstructor</span>
-<span class="token annotation punctuation">@NoArgsConstructor</span>
-<span class="token comment" spellcheck="true">// 指定索引名称</span>
-<span class="token annotation punctuation">@IndexName</span><span class="token punctuation">(</span><span class="token string">"document"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Document</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// 注解注解</span>
-    <span class="token comment" spellcheck="true">// IdType.NONE: 由ES自动生成,是默认缺省时的配置,无需您额外配置 推荐</span>
-    <span class="token comment" spellcheck="true">// IdType.UUID: 系统生成UUID,然后插入ES (不推荐)</span>
-    <span class="token comment" spellcheck="true">// IdType.CUSTOMIZE: 由用户自定义,用户自己对id值进行set,如果用户指定的id在es中不存在,则在insert时就会新增一条记录,如果用户指定的id在es中已存在记录,则自动更新该id对应的记录.</span>
-    <span class="token annotation punctuation">@IndexId</span><span class="token punctuation">(</span>type <span class="token operator">=</span> IdType<span class="token punctuation">.</span>NONE<span class="token punctuation">)</span>
-    <span class="token keyword">private</span> String id<span class="token punctuation">;</span>
+<pre class=" language-yml"><code class="language-yml">server:
+  port: 8081
+  servlet:
+    context-path: /provider
 
-    <span class="token comment" spellcheck="true">// 字段注解，当我们需要对查询字段进行精确匹配,左模糊,右模糊,全模糊,排序聚合等操作时,需要该字段的索引类型为 keyword 类型</span>
-    <span class="token annotation punctuation">@IndexField</span><span class="token punctuation">(</span>fieldType <span class="token operator">=</span> FieldType<span class="token punctuation">.</span>KEYWORD<span class="token punctuation">)</span>
-    <span class="token keyword">private</span> String title<span class="token punctuation">;</span>
+# 服务名，也是注册到 nacos 中的服务名
+spring:
+  application:
+    name: nacos-provider
 
-    <span class="token comment" spellcheck="true">// 字段注解，当我们需要对字段进行分词查询时,需要该字段的类型为 text 类型,并且指定分词器(不指定就用 ES 默认分词器,效果通常不理想)</span>
-    <span class="token annotation punctuation">@IndexField</span><span class="token punctuation">(</span>fieldType <span class="token operator">=</span> FieldType<span class="token punctuation">.</span>TEXT<span class="token punctuation">)</span>
-    <span class="token annotation punctuation">@HighLight</span>
-    <span class="token keyword">private</span> String content<span class="token punctuation">;</span>
-
-    <span class="token comment" spellcheck="true">// 字段注解，当同一个字段,我们既需要把它当 keyword 类型使用,又需要把它当 text 类型使用时,此时我们的索引类型为 keyword_text 类型</span>
-    <span class="token comment" spellcheck="true">// 当我们把该字段当做 keyword 类型查询时, ES 要求传入的字段名称为"字段名 .keyword",当把该字段当 text 类型查询时,直接使用原字段名即可</span>
-    <span class="token comment" spellcheck="true">// 如果一个字段的索引类型被创建为仅为 keyword 类型(如下图所示)查询时,则不需要在其名称后面追加 .keyword,直接查询就行</span>
-    <span class="token annotation punctuation">@IndexField</span><span class="token punctuation">(</span>fieldType <span class="token operator">=</span> FieldType<span class="token punctuation">.</span>KEYWORD_TEXT<span class="token punctuation">)</span>
-    <span class="token keyword">private</span> String description<span class="token punctuation">;</span>
-
-<span class="token punctuation">}</span></code></pre>
-<h2 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h2><ul>
-<li>定义 mapper 层实体类<code>DocumentMapper</code></li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">DocumentMapper</span> <span class="token keyword">extends</span> <span class="token class-name">BaseEsMapper</span><span class="token operator">&lt;</span>Document<span class="token operator">></span> <span class="token punctuation">{</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h2><ul>
-<li>定义 service 层接口<code>IDocumentService</code></li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">IDocumentService</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/**
-     * 自定义接口
-     * @param document
-     * @return
-     */</span>
-    Integer <span class="token function">insert</span><span class="token punctuation">(</span>Document document<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="第六步"><a href="#第六步" class="headerlink" title="第六步"></a>第六步</h2><ul>
-<li>实现 service 层接口<code>DocumentServiceImpl</code></li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
- * 框架把基础的方法放在了 Mapper 层，从而取消了 Service 层
- * 如果调用基础的方法不需要对业务做复杂的处理，可以直接在 Controller 层直接使用 Mapper 层的方法
- * 如果需要对业务进行复杂的处理，可以在封装一层 Service 层
- */</span>
-<span class="token annotation punctuation">@Service</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DocumentServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">IDocumentService</span> <span class="token punctuation">{</span>
-
-    <span class="token annotation punctuation">@Resource</span>
-    <span class="token keyword">private</span> DocumentMapper documentMapper<span class="token punctuation">;</span>
-
-    <span class="token comment" spellcheck="true">// 新增</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> Integer <span class="token function">insert</span><span class="token punctuation">(</span>Document document<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> documentMapper<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="第七步"><a href="#第七步" class="headerlink" title="第七步"></a>第七步</h2><ul>
-<li>定义 controller 层测试类 <code>DocumentController</code></li>
+# nacos 地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: xxxx:8848</code></pre>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><ul>
+<li><code>Controller</code> 层正常定义接口</li>
 </ul>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
-<span class="token annotation punctuation">@Slf4j</span>
-<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/document"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DocumentController</span> <span class="token punctuation">{</span>
-
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProviderController</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/**
-     * 封装 Service 层方法
-     */</span>
-    <span class="token annotation punctuation">@Resource</span>
-    <span class="token keyword">private</span> IDocumentService documentService<span class="token punctuation">;</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * 框架把基础的方法放在了 Mapper 层，从而取消了 Service 层
-     * 如果调用基础的方法不需要对业务做复杂的处理，可以直接在 Controller 层直接使用 Mapper 层的方法
-     * 如果需要对业务进行复杂的处理，可以在封装一层 Service 层
-     */</span>
-    <span class="token annotation punctuation">@Resource</span>
-    <span class="token keyword">private</span> DocumentMapper documentMapper<span class="token punctuation">;</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * 调用 Service 层方法
-     * @param document
+     * 定义一个方法，对外提供
      * @return
      */</span>
-    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/insert"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> Integer <span class="token function">insert</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> Document document<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> documentService<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * 直接调用 Mapper 层方法
-     * @param document
-     * @return
-     */</span>
-    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/insertDocument"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> Integer <span class="token function">insertDocument</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> Document document<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> documentMapper<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * 查询 ES 中所有的数据
-     * @return
-     */</span>
-    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/list"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Document<span class="token operator">></span> <span class="token function">getListDocument</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        LambdaEsQueryWrapper lambdaEsQueryWrapper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LambdaEsQueryWrapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        lambdaEsQueryWrapper<span class="token punctuation">.</span><span class="token function">matchAllQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> documentMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>lambdaEsQueryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * 浅分页，适合数据量在 1W 以内的数据分页
-     * @return
-     */</span>
-    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/page"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> EsPageInfo<span class="token operator">&lt;</span>Document<span class="token operator">></span> <span class="token function">getPageDocument</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        LambdaEsQueryWrapper lambdaEsQueryWrapper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LambdaEsQueryWrapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        lambdaEsQueryWrapper<span class="token punctuation">.</span><span class="token function">matchAllQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> documentMapper<span class="token punctuation">.</span><span class="token function">pageQuery</span><span class="token punctuation">(</span>lambdaEsQueryWrapper<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * 滚动查询
-     * @return
-     */</span>
-    <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/sa_page"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> SAPageInfo<span class="token operator">&lt;</span>Document<span class="token operator">></span> <span class="token function">getSAPageDocument</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        LambdaEsQueryWrapper<span class="token operator">&lt;</span>Document<span class="token operator">></span> lambdaEsQueryWrapper <span class="token operator">=</span> EsWrappers<span class="token punctuation">.</span><span class="token function">lambdaQuery</span><span class="token punctuation">(</span>Document<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        lambdaEsQueryWrapper<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        lambdaEsQueryWrapper<span class="token punctuation">.</span><span class="token function">orderByDesc</span><span class="token punctuation">(</span>Document<span class="token operator">:</span><span class="token operator">:</span>getId<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 第一页的数据</span>
-        SAPageInfo<span class="token operator">&lt;</span>Document<span class="token operator">></span> saPageInfo <span class="token operator">=</span> documentMapper<span class="token punctuation">.</span><span class="token function">searchAfterPage</span><span class="token punctuation">(</span>lambdaEsQueryWrapper<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"saPageInfo = "</span> <span class="token operator">+</span> saPageInfo<span class="token punctuation">.</span><span class="token function">getList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"; saPageInfo.getSearchAfter() = "</span> <span class="token operator">+</span> saPageInfo<span class="token punctuation">.</span><span class="token function">getSearchAfter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"; saPageInfo.getNextSearchAfter() = "</span> <span class="token operator">+</span> saPageInfo<span class="token punctuation">.</span><span class="token function">getNextSearchAfter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">// 下一页的数据</span>
-        SAPageInfo<span class="token operator">&lt;</span>Document<span class="token operator">></span> searchAfterPage <span class="token operator">=</span> documentMapper<span class="token punctuation">.</span><span class="token function">searchAfterPage</span><span class="token punctuation">(</span>lambdaEsQueryWrapper<span class="token punctuation">,</span> saPageInfo<span class="token punctuation">.</span><span class="token function">getNextSearchAfter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"searchAfterPage = "</span> <span class="token operator">+</span> searchAfterPage<span class="token punctuation">.</span><span class="token function">getList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"; searchAfterPage.getSearchAfter() = "</span> <span class="token operator">+</span> searchAfterPage<span class="token punctuation">.</span><span class="token function">getSearchAfter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"; searchAfterPage.getNextSearchAfter() = "</span> <span class="token operator">+</span> searchAfterPage<span class="token punctuation">.</span><span class="token function">getNextSearchAfter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> searchAfterPage<span class="token punctuation">;</span>
+ <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">getHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"Hello-Provider"</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+<p><strong>注意：</strong></p>
+<blockquote>
+<p>在 SpringBoot 2.5.7 这个版本中，服务提供者启动类上的注解 @EnableDiscoveryClient 可以不用加。</p>
+</blockquote>
+<h2 id="消费者"><a href="#消费者" class="headerlink" title="消费者"></a>消费者</h2><h3 id="第一步-1"><a href="#第一步-1" class="headerlink" title="第一步"></a>第一步</h3><ul>
+<li>pom.xml 文件里添加对应的配置</li>
+</ul>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>java.version</span><span class="token punctuation">></span></span>1.8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>java.version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring-cloud.version</span><span class="token punctuation">></span></span>2020.0.4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring-cloud.version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>spring-cloud-alibaba.version</span><span class="token punctuation">></span></span>2021.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>spring-cloud-alibaba.version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-starter-alibaba-nacos-discovery<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-starter-openfeign<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-starter-loadbalancer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!--使用 okhttp 客户端 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>io.github.openfeign<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>feign-okhttp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencyManagement</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-dependencies<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>${spring-cloud.version}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>type</span><span class="token punctuation">></span></span>pom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>type</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>import<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-alibaba-dependencies<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>${spring-cloud-alibaba.version}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>type</span><span class="token punctuation">></span></span>pom<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>type</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>import<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencyManagement</span><span class="token punctuation">></span></span>
+</code></pre>
+<p><strong>注意：</strong></p>
+<blockquote>
+<p>这里的 SpringBoot 对应的版本是 ：2.5.7。</p>
+<p>对应的 SpringCloud 版本是：2020.0.4。</p>
+<p>对应的 SpringCloudAlibaba 版本是：2021.1。</p>
+<p>如果引入包：spring-cloud-starter-openfeign 则需要在引入包：spring-cloud-starter-loadbalancer。</p>
+</blockquote>
+<h3 id="第二步-1"><a href="#第二步-1" class="headerlink" title="第二步"></a>第二步</h3><ul>
+<li>配置文件添加配置</li>
+</ul>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 服务名，也是注册到 nacos 中的服务名</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> nacos<span class="token punctuation">-</span>consumer
+
+<span class="token comment" spellcheck="true"># nacos 地址</span>
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> xxxx<span class="token punctuation">:</span><span class="token number">8848</span>
+<span class="token comment" spellcheck="true"># 服务提供者地址</span>
+  <span class="token key atrule">provide</span><span class="token punctuation">:</span>
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> nacos<span class="token punctuation">-</span>provider
+
+ <span class="token comment" spellcheck="true"># feign 配置</span>
+ <span class="token key atrule">feign</span><span class="token punctuation">:</span>
+    <span class="token key atrule">okhttp</span><span class="token punctuation">:</span>
+      <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true </span><span class="token comment" spellcheck="true"># 使用 okhttp 请求</span>
+    <span class="token key atrule">httpclient</span><span class="token punctuation">:</span>
+      <span class="token key atrule">max-connections</span><span class="token punctuation">:</span> <span class="token number">200 </span><span class="token comment" spellcheck="true"># 最大链接数</span>
+      <span class="token key atrule">max-connections-per-route</span><span class="token punctuation">:</span> <span class="token number">50 </span><span class="token comment" spellcheck="true"># 单个路径最大链接数</span></code></pre>
+<h3 id="第三步-1"><a href="#第三步-1" class="headerlink" title="第三步"></a>第三步</h3><ul>
+<li>定义消费者接口</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token comment" spellcheck="true">// 服务提供者的地址，对应配置文件的地址配置。</span>
+<span class="token annotation punctuation">@FeignClient</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"${spring.provide.url}"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 这个是可选择项，如果对应服务提供者的接口，都加了统一路径 /provider 那么这里就需要加，否则会 404 错误。</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/provider"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ConsumerClient</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 这个路径的地址 /hello 和服务提供者的路径地址要一致，否则会找不到对应的接口。</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
+    String <span class="token function">getHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h3><ul>
+<li><code>Controller</code> 层直接调用</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ConsumerController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Resource</span>
+    <span class="token keyword">private</span> ConsumerClient consumerClient<span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">// 这个地址就可以自定义了</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/getHello"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">getHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> consumerClient<span class="token punctuation">.</span><span class="token function">getHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>注意：</strong></p>
+<blockquote>
+<p>在 SpringBoot 2.5.7 这个版本中，服务消费者启动类上的注解 @EnableDiscoveryClient 可以不用加。</p>
+<p>消费者服务启动类上需要添加 @EnableFeignClients 注解，来启用 openfeign 服务。</p>
+<p>使用 openfeign 做接口的调用，那么对应的负载均衡是默认的，并不需要额外在接口上添加 @LoadBalancerClient 注解。</p>
+</blockquote>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -683,7 +671,7 @@ pom.xml 添加对应的架包
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Mickeyliqing.github.io/2023/03/03/springboot-easyes-elasticsearch/">http://Mickeyliqing.github.io/2023/03/03/springboot-easyes-elasticsearch/</a>
+                    <a href="http://Mickeyliqing.github.io/2023/04/21/springboot-nacos/">http://Mickeyliqing.github.io/2023/04/21/springboot-nacos/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -770,9 +758,10 @@ pom.xml 添加对应的架包
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/04/21/springboot-nacos/">
                     <div class="card-image">
@@ -790,9 +779,9 @@ pom.xml 添加对应的架包
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -805,6 +794,7 @@ pom.xml 添加对应的架包
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -823,13 +813,13 @@ pom.xml 添加对应的架包
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/02/28/springboot-kafka/">
+                <a href="/2023/03/03/springboot-easyes-elasticsearch/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="SpringBoot_Kafka">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="SpringBoot_EasyEs_Elasticsearch">
                         
-                        <span class="card-title">SpringBoot_Kafka</span>
+                        <span class="card-title">SpringBoot_EasyEs_Elasticsearch</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -840,7 +830,7 @@ pom.xml 添加对应的架包
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-03
                             </span>
                         <span class="publish-author">
                             
