@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mickeyliqing.github.io/"/>
-  <updated>2023-07-30T06:35:59.319Z</updated>
+  <updated>2023-12-05T14:00:57.488Z</updated>
   <id>http://mickeyliqing.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Knife4j_整合_Swagger3</title>
+    <link href="http://mickeyliqing.github.io/2023/12/05/knife4j-zheng-he-swagger3/"/>
+    <id>http://mickeyliqing.github.io/2023/12/05/knife4j-zheng-he-swagger3/</id>
+    <published>2023-12-05T13:59:59.000Z</published>
+    <updated>2023-12-05T14:00:57.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Knife4j整合Swagger3&quot;&gt;&lt;a href=&quot;#Knife4j整合Swagger3&quot; class=&quot;headerlink&quot; title=&quot;Knife4j整合Swagger3&quot;&gt;&lt;/a&gt;Knife4j整合Swagger3&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Knife4j" scheme="http://Mickeyliqing.github.io/categories/Knife4j/"/>
+    
+    
+      <category term="Knife4j" scheme="http://Mickeyliqing.github.io/tags/Knife4j/"/>
+    
+  </entry>
   
   <entry>
     <title>项目经验</title>
@@ -516,33 +543,6 @@
         
         
           &lt;h1 id=&quot;SpringBoot-Log4j2&quot;&gt;&lt;a href=&quot;#SpringBoot-Log4j2&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot_Log4j2&quot;&gt;&lt;/a&gt;SpringBoot_Log4j2&lt;/h1&gt;&lt;h2
-        
-      
-    
-    </summary>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot_Filter_Handler_Listener</title>
-    <link href="http://mickeyliqing.github.io/2022/05/24/springboot-filter-handler-listener/"/>
-    <id>http://mickeyliqing.github.io/2022/05/24/springboot-filter-handler-listener/</id>
-    <published>2022-05-24T14:29:50.000Z</published>
-    <updated>2022-05-24T14:30:16.764Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;SpringBoot-Filter-Handler-Listener&quot;&gt;&lt;a href=&quot;#SpringBoot-Filter-Handler-Listener&quot; class=&quot;headerlink&quot;
         
       
     
