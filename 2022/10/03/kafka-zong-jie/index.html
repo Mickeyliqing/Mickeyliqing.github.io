@@ -547,7 +547,7 @@
 <p><a href="https://kafka.apachecn.org/documentation.html#newconsumerconfigs" target="_blank" rel="noopener">https://kafka.apachecn.org/documentation.html#newconsumerconfigs</a></p>
 </blockquote>
 <h2 id="Broker"><a href="#Broker" class="headerlink" title="Broker"></a>Broker</h2><h3 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h3><p>Kafka 集群包含若干个 Broker，broker.id 指定 Broker 的编号，编号不能重复；Kafka 集群上创建的主题，又包含若干个分区，每个分区又包含若干个副本，副本又包括 Leader 副本和 Follower 副本。</p>
-<p><img src="/2022/10/03/kafka-zong-jie/replica.png" alt></p>
+<p><img src="/2022/10/03/kafka-zong-jie/replica.png" alt=""></p>
 <p>Kafka 分区选举的过程如下：</p>
 <ol>
 <li>Kafka 使用 Zookeeper 的分布式锁选举控制器，并在节点加入集群或者退出集群时通知控制器。</li>
@@ -560,9 +560,9 @@
 <li>Leader 会维护当前活跃副本列表（ISR），如果一个 Follower 落后太多，Leader 会将它从 ISR 中移除。（落后的意思是：Follower 长时间没有向 Leader 发送心跳（时间有 replica.lag.time.max.ms 配置，默认10000ms））</li>
 </ol>
 <h2 id="日志存储"><a href="#日志存储" class="headerlink" title="日志存储"></a>日志存储</h2><h3 id="日志文件"><a href="#日志文件" class="headerlink" title="日志文件"></a>日志文件</h3><p>Kafka 的消息根据主题进行归类，每个主题又可分为一个或多个分区，每个分区各自存在一个消费数据的日志文件。</p>
-<p><img src="/2022/10/03/kafka-zong-jie/logs.png" alt></p>
+<p><img src="/2022/10/03/kafka-zong-jie/logs.png" alt=""></p>
 <p>在各个分区文件中，会存在多种类型的文件，如下图：</p>
-<p><img src="/2022/10/03/kafka-zong-jie/logs_01.png" alt></p>
+<p><img src="/2022/10/03/kafka-zong-jie/logs_01.png" alt=""></p>
 <p>其中重点关注以下三种类型的文件：</p>
 <ol>
 <li>.index 偏移量索引文件，用于记录消息偏移量与物理地址之间的映射关系。</li>
@@ -570,7 +570,7 @@
 <li>.log 日志文件</li>
 </ol>
 <p>每一个主题每个分区下的日志文件，都带有一个基准偏移量，表示当前第一条消息的 offset。（偏移量是一个 64 位的长整形数，固定是20位数字，长度未达到，用 0 进行填补，索引文件和日志文件都由该作为文件名命名规则，如 日志文件名为 00000000000000000121.log，则当前日志文件的一条数据偏移量就是121（偏移量从 0 开始）。）</p>
-<p><img src="/2022/10/03/kafka-zong-jie/logs_02.png" alt></p>
+<p><img src="/2022/10/03/kafka-zong-jie/logs_02.png" alt=""></p>
 <ul>
 <li>日志文件切分的条件</li>
 </ul>
