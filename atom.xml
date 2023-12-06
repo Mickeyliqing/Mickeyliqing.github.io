@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mickeyliqing.github.io/"/>
-  <updated>2023-12-06T12:49:20.033Z</updated>
+  <updated>2023-12-06T12:54:52.920Z</updated>
   <id>http://mickeyliqing.github.io/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>EFK-部署文档</title>
+    <link href="http://mickeyliqing.github.io/2023/12/06/efk-bu-shu-wen-dang/"/>
+    <id>http://mickeyliqing.github.io/2023/12/06/efk-bu-shu-wen-dang/</id>
+    <published>2023-12-06T12:54:20.000Z</published>
+    <updated>2023-12-06T12:54:52.920Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;EFK-部署文档&quot;&gt;&lt;a href=&quot;#EFK-部署文档&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="EFK" scheme="http://Mickeyliqing.github.io/categories/EFK/"/>
+    
+    
+      <category term="EFK" scheme="http://Mickeyliqing.github.io/tags/EFK/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Office-文件在线预览</title>
+    <link href="http://mickeyliqing.github.io/2023/12/06/office-wen-jian-zai-xian-yu-lan/"/>
+    <id>http://mickeyliqing.github.io/2023/12/06/office-wen-jian-zai-xian-yu-lan/</id>
+    <published>2023-12-06T12:52:45.000Z</published>
+    <updated>2023-12-06T12:53:43.914Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Office-文件在线预览&quot;&gt;&lt;a href=&quot;#Office-文件在线预览&quot; class=&quot;headerlink&quot; title=&quot;Office_文件在线预览&quot;&gt;&lt;/a&gt;Office_文件在线预览&lt;/h1&gt;&lt;h2 id=&quot;方案一&quot;&gt;&lt;a href=&quot;#方案一&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="文件在线预览" scheme="http://Mickeyliqing.github.io/categories/%E6%96%87%E4%BB%B6%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88/"/>
+    
+    
+      <category term="文件在线预览" scheme="http://Mickeyliqing.github.io/tags/%E6%96%87%E4%BB%B6%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用-Poi-tl-生成-Word-文档</title>
+    <link href="http://mickeyliqing.github.io/2023/12/06/shi-yong-poi-tl-sheng-cheng-word-wen-dang/"/>
+    <id>http://mickeyliqing.github.io/2023/12/06/shi-yong-poi-tl-sheng-cheng-word-wen-dang/</id>
+    <published>2023-12-06T12:51:16.000Z</published>
+    <updated>2023-12-06T12:52:07.841Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;使用-Poi-tl-生成-Word-文档&quot;&gt;&lt;a href=&quot;#使用-Poi-tl-生成-Word-文档&quot; class=&quot;headerlink&quot; title=&quot;使用 Poi-tl 生成 Word 文档&quot;&gt;&lt;/a&gt;使用 Poi-tl 生成 Word
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Poi-tl" scheme="http://Mickeyliqing.github.io/categories/Poi-tl/"/>
+    
+    
+      <category term="Poi-tl" scheme="http://Mickeyliqing.github.io/tags/Poi-tl/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringCloud_Gateway_动态路由</title>
@@ -462,87 +543,6 @@
         
         
           &lt;h1 id=&quot;SpringBoot-Swagger&quot;&gt;&lt;a href=&quot;#SpringBoot-Swagger&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot_Swagger&quot;&gt;&lt;/a&gt;SpringBoot_Swagger&lt;/h1&gt;&lt;h2
-        
-      
-    
-    </summary>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot_Validation</title>
-    <link href="http://mickeyliqing.github.io/2022/05/24/springboot-validation/"/>
-    <id>http://mickeyliqing.github.io/2022/05/24/springboot-validation/</id>
-    <published>2022-05-24T14:35:33.000Z</published>
-    <updated>2022-05-24T14:35:58.324Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;SpringBoot-Validation&quot;&gt;&lt;a href=&quot;#SpringBoot-Validation&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot_Thread</title>
-    <link href="http://mickeyliqing.github.io/2022/05/24/springboot-thread/"/>
-    <id>http://mickeyliqing.github.io/2022/05/24/springboot-thread/</id>
-    <published>2022-05-24T14:34:38.000Z</published>
-    <updated>2022-05-24T14:35:11.020Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;SpringBoot-Thread&quot;&gt;&lt;a href=&quot;#SpringBoot-Thread&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot_Thread&quot;&gt;&lt;/a&gt;SpringBoot_Thread&lt;/h1&gt;&lt;h2
-        
-      
-    
-    </summary>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot_Redis</title>
-    <link href="http://mickeyliqing.github.io/2022/05/24/springboot-redis/"/>
-    <id>http://mickeyliqing.github.io/2022/05/24/springboot-redis/</id>
-    <published>2022-05-24T14:33:42.000Z</published>
-    <updated>2022-05-24T14:34:17.673Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;SpringBoot-Redis&quot;&gt;&lt;a href=&quot;#SpringBoot-Redis&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot_Redis&quot;&gt;&lt;/a&gt;SpringBoot_Redis&lt;/h1&gt;&lt;h2 id=&quot;第一步&quot;&gt;&lt;a
         
       
     
