@@ -438,7 +438,7 @@
 <ol>
 <li><strong>@PathVariable</strong>：直接从 URL 中获取参数值，使用 @PathVariable(“ “) 注解,对应的 URL 数据为：<a href="http://localhost:8080/get/1" target="_blank" rel="noopener">http://localhost:8080/get/1</a> 。</li>
 <li><strong>@RequestParam</strong>：通过请求的 URL 参数获取对应的数值，使用 @RequestParam(“ “)注解，对应的 URL 数据为：<a href="http://localhost:8080/get/page?area_mark=AI。这里有一件事需要注意，那就是如果" target="_blank" rel="noopener">http://localhost:8080/get/page?area_mark=AI。这里有一件事需要注意，那就是如果</a> URL 里的参数是 area_mark，那么 @RequestParam(“area_mark”) 这里应该是这样的，也就是说这两块是对应的。</li>
-<li><strong>@component</strong>：实现 bean 的注入。@component （把普通 pojo 实例化到 spring 容器中，相当于配置文件中的 <bean id="" class="">）泛指各种组件，就是说当我们的类不属于各种归类的时候（不属于 @Controller、@Services 等的时候），我们就可以使用 @Component 来标注这个类。</bean></li>
+<li><strong>@component</strong>：实现 bean 的注入。@component （把普通 pojo 实例化到 spring 容器中，相当于配置文件中的 <bean id class>）泛指各种组件，就是说当我们的类不属于各种归类的时候（不属于 @Controller、@Services 等的时候），我们就可以使用 @Component 来标注这个类。</bean></li>
 <li><strong>@PropertySource</strong>：加载指定的属性文件（*.properties）到 Spring 的 Environment 中。可以配合 @Value 和@ConfigurationProperties 使用。@PropertySource 和 @Value组合使用，可以将自定义属性文件中的属性变量值注入到当前类的使用@Value注解的成员变量中。@PropertySource 和 @ConfigurationProperties组合使用，可以将属性文件与一个Java类绑定，将属性文件中的变量值注入到该Java类的成员变量中。</li>
 <li><strong>@Slf4j</strong>：用作日志输出的，一般会在项目每个类的开头加入该注解。相当于：private final Logger logger = LoggerFactory.getLogger(当前类名.class);</li>
 <li><strong>@validated</strong>：校验数据，如果数据异常则会统一抛出异常，方便异常中心统一处理。</li>
