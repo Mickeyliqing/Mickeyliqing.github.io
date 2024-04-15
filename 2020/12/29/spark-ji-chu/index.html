@@ -1,0 +1,1351 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Spark_基础, L Q">
+    <meta name="description" content="Spark_总体参考资料地址：
+如果会简单的 Scala 语言，那么学习 Spark 的时候会如虎添翼
+Spark用来做什么？取代MapReduce做批处理计算。
+为什么 Spark 比 MapReduce 快？
+Spark 是基于内存的，">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>Spark_基础 | L Q</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="L Q" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">L Q</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">L Q</div>
+        <div class="logo-desc">
+            
+            lq
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Spark_基础</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/SparkCore/">
+                                <span class="chip bg-color">SparkCore</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/SparkCore/" class="post-category">
+                                SparkCore
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-12-29
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Spark-总体"><a href="#Spark-总体" class="headerlink" title="Spark_总体"></a>Spark_总体</h1><p><a href="https://github.com/heibaiying/BigData-Notes#三spark" target="_blank" rel="noopener">参考资料地址：</a></p>
+<p><strong>如果会简单的 Scala 语言，那么学习 Spark 的时候会如虎添翼</strong></p>
+<h2 id="Spark用来做什么？"><a href="#Spark用来做什么？" class="headerlink" title="Spark用来做什么？"></a>Spark用来做什么？</h2><p>取代MapReduce做批处理计算。</p>
+<h2 id="为什么-Spark-比-MapReduce-快？"><a href="#为什么-Spark-比-MapReduce-快？" class="headerlink" title="为什么 Spark 比 MapReduce 快？"></a>为什么 Spark 比 MapReduce 快？</h2><ul>
+<li>Spark 是基于内存的，而 MapReduce 是基于磁盘的。</li>
+<li>Spark 是基于线程方式运行在进程中的，MapReduce 是基于进程运行的。</li>
+</ul>
+<h2 id="Spark集群架构。"><a href="#Spark集群架构。" class="headerlink" title="Spark集群架构。"></a>Spark集群架构。</h2><p><img src="/2020/12/29/spark-ji-chu/20201219200555571_6775.png" alt="Spark集群架构"></p>
+<h2 id="Spark的数据抽象。"><a href="#Spark的数据抽象。" class="headerlink" title="Spark的数据抽象。"></a>Spark的数据抽象。</h2><p>spark的数据抽象是RDD，它是只读的、分区记录的集合，支持并行操作，可以由外部数据集或其他 RDD 转换而来，它具有以下特性：</p>
+<p><img src="/2020/12/29/spark-ji-chu/20201219200816851_25656.png" alt="Spark 的数据抽象"></p>
+<h2 id="创建RDD"><a href="#创建RDD" class="headerlink" title="创建RDD"></a>创建RDD</h2><ol>
+<li>有现有集合创建</li>
+<li>引用外部数据集</li>
+</ol>
+<p><strong>使用外部数据集需要注意：</strong></p>
+<blockquote>
+<p>如果在集群环境下从本地文件系统读取数据，则要求该文件必须在集群中所有机器上都存在，且路径相同。<br>支持目录路径，支持压缩文件，支持使用通配符。</p>
+</blockquote>
+<h2 id="操作RDD"><a href="#操作RDD" class="headerlink" title="操作RDD"></a>操作RDD</h2><blockquote>
+<p>RDD支持两种类型的操作：transformations（转换，从现有数据集创建新数据集）和 actions（在数据集上运行计算后将值返回到驱动程序）。RDD中的所有转换操作都是惰性的，它们只是记住这些转换操作，但不会立即执行，只有遇到 action 操作后才会真正的进行计算，这类似于函数式编程中的惰性求值。</p>
+</blockquote>
+<ul>
+<li>理解Shuffle<br>由于Shuffle操作对性能的影响比较大，所以需要特别注意使用，以下操作都会导致Shuffle：</li>
+</ul>
+<blockquote>
+<p>涉及到重新分区操作： 如repartition 和 coalesce；<br>所有涉及到ByKey的操作：如groupByKey和reduceByKey，但countByKey除外；<br>联结操作：如cogroup和join。</p>
+</blockquote>
+<ul>
+<li>宽依赖和窄依赖<br>RDD 和它的父 RDD(s) 之间的依赖关系分为两种不同的类型：</li>
+</ul>
+<blockquote>
+<p>窄依赖 (narrow dependency)：父 RDDs 的一个分区最多被子 RDDs 一个分区所依赖；<br>宽依赖 (wide dependency)：父 RDDs 的一个分区可以被子 RDDs 的多个子分区所依赖。</p>
+</blockquote>
+<ul>
+<li>区分这两种依赖是非常有用的：</li>
+</ul>
+<blockquote>
+<p>首先，窄依赖允许在一个集群节点上以流水线的方式（pipeline）对父分区数据进行计算，例如先执行 map 操作，然后执行 filter 操作。而宽依赖则需要计算好所有父分区的数据，然后再在节点之间进行 Shuffle，这与 MapReduce 类似。<br>窄依赖能够更有效地进行数据恢复，因为只需重新对丢失分区的父分区进行计算，且不同节点之间可以并行计算；而对于宽依赖而言，如果数据丢失，则需要对所有父分区数据进行计算并再次 Shuffle。</p>
+</blockquote>
+<h3 id="外部数据集"><a href="#外部数据集" class="headerlink" title="外部数据集"></a>外部数据集</h3><p>Spark可以从Hadoop支持的任何存储源（包括本地文件系统，HDFS，Cassandra，HBase，Amazon S3等）创建分布式数据集。Spark支持文本文件，SequenceFiles和任何其他Hadoop InputFormat。</p>
+<p>可以使用SparkContext的textFile方法创建文本文件RDD 。此方法需要一个URI的文件（本地路径的机器上，或一个hdfs://，s3a://等URI），并读取其作为行的集合。</p>
+<ul>
+<li>Java 代码</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Spark_Text_Demo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> String appName <span class="token operator">=</span> <span class="token string">"spaer.text.demo"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> String master <span class="token operator">=</span> <span class="token string">"local[2]"</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        JavaSparkContext context <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            SparkConf conf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SparkConf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setAppName</span><span class="token punctuation">(</span>appName<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setMaster</span><span class="token punctuation">(</span>master<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JavaSparkContext</span><span class="token punctuation">(</span>conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            JavaRDD<span class="token operator">&lt;</span>String<span class="token operator">></span> rdd <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">textFile</span><span class="token punctuation">(</span><span class="token string">"F:\\SparkText"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token comment" spellcheck="true">// JavaRDD&lt;String> rdd = context.textFile("hdfs://master01:9000/Demo_27");</span>
+
+            rdd<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Boolean<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token annotation punctuation">@Override</span>
+                <span class="token keyword">public</span> Boolean <span class="token function">call</span><span class="token punctuation">(</span>String s<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> s<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"spark"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            Integer reduce <span class="token operator">=</span> rdd<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Integer<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token annotation punctuation">@Override</span>
+                <span class="token keyword">public</span> Integer <span class="token function">call</span><span class="token punctuation">(</span>String s<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Function2</span><span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span> Integer<span class="token punctuation">,</span> Integer<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token annotation punctuation">@Override</span>
+                <span class="token keyword">public</span> Integer <span class="token function">call</span><span class="token punctuation">(</span>Integer integer<span class="token punctuation">,</span> Integer integer2<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> integer <span class="token operator">+</span> integer2<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"执行结果："</span> <span class="token operator">+</span> reduce<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">finally</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>context <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                context<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<ul>
+<li>Scala 代码</li>
+</ul>
+<pre class=" language-scala"><code class="language-scala"><span class="token keyword">object</span> WordCount <span class="token punctuation">{</span>
+  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> conf <span class="token operator">=</span> <span class="token keyword">new</span> SparkConf<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>setAppName<span class="token punctuation">(</span><span class="token string">"1208"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>setMaster<span class="token punctuation">(</span><span class="token string">"local[2]"</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> sc <span class="token operator">=</span> <span class="token keyword">new</span> SparkContext<span class="token punctuation">(</span>conf<span class="token punctuation">)</span>
+    sc<span class="token punctuation">.</span>textFile<span class="token punctuation">(</span><span class="token string">"F:\\SparkText"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>flatMap<span class="token punctuation">(</span>_<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>map<span class="token punctuation">(</span><span class="token punctuation">(</span>_<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reduceByKey<span class="token punctuation">(</span>_<span class="token operator">+</span>_<span class="token punctuation">)</span><span class="token punctuation">.</span>foreach<span class="token punctuation">(</span>println<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">//sc.textFile("hdfs://master01:9000/Demo_27").flatMap(_.split(" ")).map((_,1)).reduceByKey(_+_).foreach(println)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>注意事项</strong></p>
+<ul>
+<li>如果在本地文件系统上使用路径，则还必须在工作节点上的相同路径上访问该文件。将文件复制给所有工作人员，或使用网络安装的共享文件系统。</li>
+<li>Spark的所有基于文件的输入法（包括textFile）都支持在目录，压缩文件和通配符上运行。例如，你可以使用textFile(“/my/directory”)，textFile(“/my/directory/.txt”)和textFile(“/my/directory/.gz”)。</li>
+<li>该textFile方法还采用一个可选的第二个参数来控制文件的分区数。默认情况下，Spark为文件的每个块创建一个分区（HDFS中的块默认为128MB），但是您也可以通过传递更大的值来请求更大数量的分区。请注意，分区不能少于块。</li>
+</ul>
+<h3 id="Stage-划分"><a href="#Stage-划分" class="headerlink" title="Stage 划分"></a>Stage 划分</h3><p>Stage 的划分依据是：宽依赖。</p>
+<p>Stage 与 Stage 之间的过程就是 Shuffle 。负责这个过程的是 ShuffleMapStage 和 ResultStage。</p>
+<p>DAGScheduler 会将 Job 的 RDD 划分到不同的 Stage 中，并构建一个 Stage 的依赖关系，即DAG。这样划分的目的是既可以保障没有依赖关系的 Stage 可以并行执行，又可以保证存在依赖关系的 Stage 顺序执行。Stage 主要分为两种类型，一种是 ShuffleMapStage，另一种是 ResultStage。其中 ShuffleMapStage 是属于上游的 Stage，而 ResulStage 属于最下游的 Stage，这意味着上游的 Stage 先执行，最后执行 ResultStage。</p>
+<p>可以这样理解：在 DAG 中进行反向解析，遇到宽依赖就断开、遇到窄依赖就把当前的 RDD 加入到当前的 Stage 中。即将窄依赖划分到同一个s Stage中，从而形成一个 Pipeline，提升计算效率。所以一个 DAG 图可以划分为多个 Stage，每个 Stage都代表了一组关联的，相互之间没有Shuffle依赖关系的任务组成的 Task 集合，每个 Task 集合会被提交到 TaskScheduler 进行调度处理，最终将任务分发到 Executor 中进行执行。</p>
+<p>其实就是一句话：每一个独立的 Stage 中，只存在一种依赖，那就是窄依赖。</p>
+<h3 id="Shuffle"><a href="#Shuffle" class="headerlink" title="Shuffle"></a>Shuffle</h3><p>Shuffle 可以理解为对数据的重组。</p>
+<p>先看下 Hadoop 的 Shuffle 流程：</p>
+<p><img src="/2020/12/29/spark-ji-chu/20201226165143786_28360.png" alt="Hadoop_Shuffle"></p>
+<p>在 DAG 调度的过程中，Stage 阶段的划分是根据是否有 Shuffle 过程，也就是存在宽依赖的时候,需要进行 Shuffle,这时候会将 Job 划分成多个Stage，每一个 Stage 内部有很多可以并行运行的 Task。<br>Stage 与 Stage 之间的过程就是 Shuffle 阶段，在 Spark 中，负责 Shuffle 过程的执行、计算和处理的组件主要就是 ShuffleManager 。ShuffleManager 随着 Spark 的发展有两种实现的方式，分别为 HashShuffleManager 和 SortShuffleManager ，因此 Spark的Shuffle有 Hash Shuffle  和 Sort Shuffle 两种。</p>
+<ul>
+<li>HashShuffleManager</li>
+</ul>
+<blockquote>
+<p>HashShuffleManager 有着一个非常严重的弊端，就是会产生大量的中间磁盘文件，进而由大量的磁盘 IO 操作影响了性能。</p>
+</blockquote>
+<ul>
+<li>SortShuffleManager</li>
+</ul>
+<blockquote>
+<p>SortShuffleManager 相较于 HashShuffleManager 来说，主要就在于每个 Task 在进行 Shuffle 操作时，虽然也会产生较多的临时磁盘文件，但是最后会将所有的临时文件合并(Merge)成一个磁盘文件，因此每个 Task 就只有一个磁盘文件。在下一个 Stage 的 Shuffle Read Task 拉取自己的数据时，只要根据索引读取每个磁盘文件中的部分数据即可。</p>
+</blockquote>
+<ul>
+<li>SortShuffleManager 的运行机制</li>
+</ul>
+<blockquote>
+<p>普通机制</p>
+</blockquote>
+<p><img src="/2020/12/29/spark-ji-chu/20201226170425473_5772.png" alt="SortShuffleManager_普通机制"></p>
+<blockquote>
+<p>运行流程</p>
+</blockquote>
+<ul>
+<li>数据先写入数据结构，聚合算子写入 Map ，一边通过 Map 局部聚合，一边写入内存；Join 直接写入内存。</li>
+<li>判断内存是否达到阈值（5M）。如果达到就将数据写入磁盘，清空内存。</li>
+<li>数据在写入磁盘前会先排序，排序好的数据通过缓冲区溢写方式在分批写入磁盘文件。默认批次一万条。每次溢写都会产生一个磁盘文件。</li>
+<li>在每个 Task 中，将所有临时文件合并。这个过程会将所有临时文件读取出来，一次写入到最终文件。这就意味着一个 Task 的所有数据都在这个文件中。同时单独写一份索引文件，标识下游各个 Task 的数据在文件中的  Start Offset 和 End Offset。</li>
+</ul>
+<blockquote>
+<p>好处</p>
+</blockquote>
+<ol>
+<li>小文件明显变少了，一个 Task 只生成一个 File 文件。</li>
+<li>File 文件整体有序，加上索引文件的辅助，查找变快，虽然排序浪费一些性能，但是查找变快很多。</li>
+</ol>
+<h3 id="广播变量"><a href="#广播变量" class="headerlink" title="广播变量"></a>广播变量</h3><p>广播变量是一个只读的变量，并且在每个节点都保存一份副本，而不需要在集群中发送数据。</p>
+<p>使用场景：当我们的数据有一部分在整个数据处理的流程中，是只读的时候，那么推荐使用广播变量。</p>
+<ul>
+<li>代码</li>
+</ul>
+<pre class=" language-scala"><code class="language-scala"><span class="token keyword">object</span> SparkBroadcast <span class="token punctuation">{</span>
+  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> conf <span class="token operator">=</span> <span class="token keyword">new</span> SparkConf<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>setMaster<span class="token punctuation">(</span><span class="token string">"local[2]"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>setAppName<span class="token punctuation">(</span><span class="token string">"SparkBroadcast"</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> ssc <span class="token operator">=</span> <span class="token keyword">new</span> SparkContext<span class="token punctuation">(</span>conf<span class="token punctuation">)</span>
+    <span class="token keyword">val</span> mapData <span class="token operator">=</span> Map<span class="token punctuation">(</span><span class="token string">"Spark"</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">"Flink"</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token number">20</span><span class="token punctuation">,</span><span class="token string">"Hadoop"</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token string">"Hive"</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token number">9</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">//定义广播变量</span>
+    <span class="token keyword">val</span> broadRDD <span class="token operator">=</span> ssc<span class="token punctuation">.</span>broadcast<span class="token punctuation">(</span>mapData<span class="token punctuation">)</span>
+    println<span class="token punctuation">(</span>broadRDD<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+    ssc<span class="token punctuation">.</span>stop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>注意事项</strong></p>
+<ol>
+<li>不能将一个 RDD 使用广播变量广播出去。</li>
+<li>广播变量只能在 Driver 端定义，不能在 Executor 端定义。</li>
+<li>在 Driver 端可以修改广播变量的值，在 Executor 端无法修改广播变量的值。</li>
+<li>如果 Executor 端用到了 Driver 的变量，如果不使用广播变量在 Executor 有多少 Task 就有多少 Driver 端的变量副本。</li>
+<li>如果 Executor 端用到了 Driver 的变量，如果使用广播变量在每个 Executo r中只有一份Driver 端的变量副本</li>
+</ol>
+<h3 id="累加器"><a href="#累加器" class="headerlink" title="累加器"></a>累加器</h3><p>累加器是 Spark 提供的另外一个共享变量，与广播变量不同，累加器是可以被修改的，是可变的。</p>
+<p>使用场景：调用 Foreach 访问 RDD 中的每个元素的时候，Foreach 内部不可更新其它变量，否则与预期结果不符。原因是： Spark 是以不同节点的一组任务并行一个函数，会把函数内的每个变量的副本发送到每个任务。</p>
+<ul>
+<li>代码</li>
+</ul>
+<pre class=" language-scala"><code class="language-scala"><span class="token keyword">object</span> SparkAccumulator <span class="token punctuation">{</span>
+  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> conf <span class="token operator">=</span> <span class="token keyword">new</span> SparkConf<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>setMaster<span class="token punctuation">(</span><span class="token string">"local[2]"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>setAppName<span class="token punctuation">(</span><span class="token string">"SparkAccumulator"</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> ssc <span class="token operator">=</span> <span class="token keyword">new</span> SparkContext<span class="token punctuation">(</span>conf<span class="token punctuation">)</span>
+    <span class="token keyword">val</span> list <span class="token operator">=</span> List<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> listRDD <span class="token operator">=</span> ssc<span class="token punctuation">.</span>parallelize<span class="token punctuation">(</span>list<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">//定义外部变量</span>
+    <span class="token keyword">var</span> counter <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token comment" spellcheck="true">//定义累加器</span>
+    <span class="token keyword">val</span> countAcc <span class="token operator">=</span> ssc<span class="token punctuation">.</span>longAccumulator<span class="token punctuation">(</span><span class="token string">"accumulator"</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> mapRDD <span class="token operator">=</span> listRDD<span class="token punctuation">.</span>map<span class="token punctuation">(</span>num <span class="token keyword">=></span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">//外部变量的值并不会改变</span>
+      counter <span class="token operator">+=</span> <span class="token number">1</span>
+      <span class="token comment" spellcheck="true">//满足条件使用累加器</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>num <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        countAcc<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      num <span class="token operator">%</span> <span class="token number">2</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    mapRDD<span class="token punctuation">.</span>foreach<span class="token punctuation">(</span>println<span class="token punctuation">)</span>
+    println<span class="token punctuation">(</span><span class="token string">"counter = "</span> <span class="token operator">+</span> counter<span class="token punctuation">)</span>
+    println<span class="token punctuation">(</span><span class="token string">"countAcc = "</span> <span class="token operator">+</span> countAcc<span class="token punctuation">)</span>
+    ssc<span class="token punctuation">.</span>stop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>我们在dirver中声明的一些局部变量或者成员变量，可以直接在transformation中使用，但是经过transformation操作之后，是不会将最终的结果重新赋值给dirver中的对应的变量。因为通过action触发transformation操作之后，transformation的操作都是通过DAGScheduler将代码打包，然后序列化，最后交由TaskScheduler传送到各个Worker节点中的Executor去执行，在transformation中执行的这些变量，是自己节点上的变量，不是dirver上最初的变量，只不过是将driver上的对应的变量拷贝了一份而已。</p>
+</blockquote>
+<h3 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h3><ol>
+<li>persist() 可以把数据缓存到内存和磁盘。</li>
+<li>cache() 把数据缓存到内存中，本质上还是调用 persist() 方法。</li>
+</ol>
+<ul>
+<li>持久化机制</li>
+</ul>
+<p><img src="/2020/12/29/spark-ji-chu/%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/BigDataNotes/Spark/SparkCore/_v_images/20201226180610577_22973.png" alt="持久化机制"></p>
+<h3 id="Spark-的任务调度"><a href="#Spark-的任务调度" class="headerlink" title="Spark 的任务调度"></a>Spark 的任务调度</h3><ol>
+<li>初始化 Driver，Driver端运行客户端的main方法，构建SparkContext对象，在SparkContext对象内部依次构建DAGScheduler和TaskScheduler。</li>
+<li>TaskScheduler 去注册中心 Master 注册，寻找 Work 启动 Executor 。</li>
+<li>Executor 把注册的信息发送给 Driver 。</li>
+<li>按照 RDD 的操作，生成 DAG 有向无环图。</li>
+<li>DAGScheduler 拿到 DAG 有向无环图之后，按照宽依赖进行 Stage 的划分。每一个 Stage 内部有很多可以并行运行的 Task，最后封装在一个一个的 TaskSet 集合中，然后把 TaskSet 发送给 TaskScheduler。</li>
+<li>TaskScheduler 得到 TaskSet 集合之后，依次遍历取出每一个 Task 提交到 Worker 节点上的 Executor 进程中运行。</li>
+<li>Task 运行完，任务结束。</li>
+</ol>
+<p><strong>解释说明</strong></p>
+<ol>
+<li>Application 在遇到不同的算子时会划分不同的 Job。</li>
+<li>Job 会根据是否有宽依赖划分多个 Stage。</li>
+<li>Stage 里又分多个 Task （任务逻辑相同，数据不同）。</li>
+<li>每个 Task 对应一个分区 Partition 。</li>
+</ol>
+<p><img src="/2020/12/29/spark-ji-chu/20201226185920840_11999.png" alt="说明"></p>
+<h3 id="Spark-分区"><a href="#Spark-分区" class="headerlink" title="Spark 分区"></a>Spark 分区</h3><ol>
+<li>HashPartitioner （Spark 默认）</li>
+<li>RangePartitioner</li>
+<li>自定义分区</li>
+</ol>
+<ul>
+<li>自定义分区代码</li>
+</ul>
+<pre class=" language-scala"><code class="language-scala"><span class="token comment" spellcheck="true">//自定义分区只要继承 Partitioner 类，重写其中的方法即可</span>
+<span class="token keyword">class</span> CustomerPartition<span class="token punctuation">(</span>partitions<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span>  <span class="token keyword">extends</span> Partitioner<span class="token punctuation">{</span>
+  <span class="token keyword">override</span> <span class="token keyword">def</span> numPartitions<span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> partitions
+  <span class="token keyword">override</span> <span class="token keyword">def</span> getPartition<span class="token punctuation">(</span>key<span class="token operator">:</span> <span class="token builtin">Any</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">(</span>key<span class="token punctuation">.</span>toString<span class="token punctuation">.</span>charAt<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> scala<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Random<span class="token punctuation">.</span>nextInt<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> partitions
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-scala"><code class="language-scala"><span class="token keyword">object</span> DefaultPartition <span class="token punctuation">{</span>
+  <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> spark <span class="token operator">=</span> SparkSession<span class="token punctuation">.</span>builder<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>master<span class="token punctuation">(</span><span class="token string">"local[2]"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getOrCreate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> bigData <span class="token operator">=</span> util<span class="token punctuation">.</span>Arrays<span class="token punctuation">.</span>asList<span class="token punctuation">(</span><span class="token string">"Hadoop"</span><span class="token punctuation">,</span> <span class="token string">"Spark"</span><span class="token punctuation">,</span> <span class="token string">"Flink"</span><span class="token punctuation">,</span> <span class="token string">"Hive"</span><span class="token punctuation">,</span> <span class="token string">"Impala"</span><span class="token punctuation">,</span> <span class="token string">"Hbase"</span><span class="token punctuation">,</span> <span class="token string">"Kafka"</span><span class="token punctuation">,</span> <span class="token string">"ClickHouse"</span><span class="token punctuation">,</span> <span class="token string">"KUDU"</span><span class="token punctuation">,</span> <span class="token string">"zookeeper"</span><span class="token punctuation">)</span>
+    <span class="token keyword">import</span> spark<span class="token punctuation">.</span>implicits<span class="token punctuation">.</span>_
+    <span class="token keyword">val</span> stringDataset <span class="token operator">=</span> spark<span class="token punctuation">.</span>createDataset<span class="token punctuation">(</span>bigData<span class="token punctuation">)</span>
+    println<span class="token punctuation">(</span><span class="token string">"当前分区："</span> <span class="token operator">+</span> stringDataset<span class="token punctuation">.</span>rdd<span class="token punctuation">.</span>partitions<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+
+    <span class="token keyword">val</span> reparationDS <span class="token operator">=</span> stringDataset<span class="token punctuation">.</span>repartition<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+    println<span class="token punctuation">(</span><span class="token string">"第一次分区："</span> <span class="token operator">+</span> reparationDS<span class="token punctuation">.</span>rdd<span class="token punctuation">.</span>partitions<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+
+    <span class="token keyword">val</span> stringRDD <span class="token operator">=</span> stringDataset<span class="token punctuation">.</span>rdd<span class="token punctuation">.</span>map<span class="token punctuation">(</span><span class="token punctuation">(</span>word <span class="token keyword">=></span> <span class="token punctuation">(</span>word<span class="token punctuation">,</span>word<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> partitionRDD <span class="token operator">=</span> stringRDD<span class="token punctuation">.</span>partitionBy<span class="token punctuation">(</span><span class="token keyword">new</span> CustomerPartition<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    println<span class="token punctuation">(</span><span class="token string">"第二次分区："</span> <span class="token operator">+</span> partitionRDD<span class="token punctuation">.</span>partitions<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<ul>
+<li>Spark 内自己的方法</li>
+</ul>
+<ol>
+<li>coalesce() 方法，避免 Shuffle ，只能减少分区。</li>
+<li>repartition() 方法，会有 Shuffle，可以减少分区和增加分区。</li>
+</ol>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">L Q</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://Mickeyliqing.github.io/2020/12/29/spark-ji-chu/">http://Mickeyliqing.github.io/2020/12/29/spark-ji-chu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">L Q</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/SparkCore/">
+                                    <span class="chip bg-color">SparkCore</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/12/29/spark-shi-yong/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Spark_使用">
+                        
+                        <span class="card-title">Spark_使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/SparkCore/" class="post-category">
+                                    SparkCore
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SparkCore/">
+                        <span class="chip bg-color">SparkCore</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/11/22/flume-shi-ji-cao-zuo/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Flume实际操作">
+                        
+                        <span class="card-title">Flume实际操作</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Flume/" class="post-category">
+                                    Flume
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Flume-%E5%AE%9E%E9%99%85%E6%93%8D%E4%BD%9C/">
+                        <span class="chip bg-color">Flume 实际操作</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2024</span>
+            
+            <a href="/about" target="_blank">L Q</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Mickeyliqing/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:Mickeyliqing@Gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2698999291" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2698999291" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+
+</html>

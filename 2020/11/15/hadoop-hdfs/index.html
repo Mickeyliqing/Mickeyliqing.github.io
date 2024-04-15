@@ -1,0 +1,1196 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Hadoop_HDFS, L Q">
+    <meta name="description" content="Hadoop基础HadoopHadoop主要分为三大模块，分别是 HDFS（文件分布系统）， MapReduce（分布式计算框架），YARN（资源调度管理）。
+HDFSHDFS的组成
+NameNode主要作用
+
+存储数据
+
+存储对应的元数据">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>Hadoop_HDFS | L Q</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="L Q" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">L Q</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">L Q</div>
+        <div class="logo-desc">
+            
+            lq
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Hadoop_HDFS</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/HDFS/">
+                                <span class="chip bg-color">HDFS</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Hadoop/" class="post-category">
+                                Hadoop
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-11-15
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Hadoop基础"><a href="#Hadoop基础" class="headerlink" title="Hadoop基础"></a>Hadoop基础</h1><h2 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h2><p><code>Hadoop</code>主要分为三大模块，分别是 <code>HDFS</code>（文件分布系统）， <code>MapReduce</code>（分布式计算框架），<code>YARN</code>（资源调度管理）。</p>
+<h3 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h3><h4 id="HDFS的组成"><a href="#HDFS的组成" class="headerlink" title="HDFS的组成"></a>HDFS的组成</h4><p><img src="/2020/11/15/hadoop-hdfs/20201005110319144_22561.png" alt="HDFS的组成"></p>
+<h5 id="NameNode"><a href="#NameNode" class="headerlink" title="NameNode"></a>NameNode</h5><p><strong>主要作用</strong></p>
+<ul>
+<li>存储数据</li>
+</ul>
+<p>存储对应的元数据，其中元数据包括：目录结构树，文件，数据块和副本的映射关系（不是数据信息，是映射关系）</p>
+<ul>
+<li>存储位置</li>
+</ul>
+<p>内存和磁盘</p>
+<p><strong>包含的文件</strong></p>
+<ul>
+<li><code>fsimage</code>：元数据镜像文件，存储某一时段<code>NameNode</code>内存元数据信息即保存了最新的元数- 据<code>checkpoint</code>。</li>
+<li><code>edits</code>：操作日志文件。</li>
+<li><code>fstime</code>：保存最近一次<code>checkpoint</code>的时间。</li>
+</ul>
+<p>1、<code>NameNode</code> 为了保证交互速度，会在内存中保存这些元数据信息，但同时也会将这些信息保存到硬盘上进行持久化存储；</p>
+<p>2、<code>fsimage</code>文件是内存中的元数据在硬盘上的<code>checkpoint</code>，它是一种序列化的格式，不能直接修改。</p>
+<p>3、<code>Hadoop</code>在重启时就是通过<code>fsimage+edits</code>来状态恢复，<code>fsimage</code>相当于一个<code>checkpoint</code>，首先将最新的<code>checkpoint</code>的元数据信息从<code>fsimage</code>中加载到内存，然后逐一执行<code>edits</code>修改日志文件中的操作以恢复到重启之前的最终状态。</p>
+<p>4、<code>Hadoop</code>的持久化过程是将上一次<code>checkpoint</code>以后最近一段时间的操作保存到修改日志文件<code>edits</code>中。</p>
+<h5 id="SecondaryNameNode"><a href="#SecondaryNameNode" class="headerlink" title="SecondaryNameNode"></a>SecondaryNameNode</h5><ul>
+<li>主要作用</li>
+</ul>
+<p>作为<code>NameNode</code>的冷备份；合并<code>fsimage</code>（元数据镜像文件（文件系统的目录树））和<code>fsedits</code>然后再发给<code>Namenode</code>,分担<code>NameNode</code>的一部分工作。</p>
+<p>1、<code>edits</code>：元数据的操作日志（针对文件系统做的修改操作记录）</p>
+<p>2、<code>Namenode</code>内存中存储的是<code>fsimage+edits</code>。</p>
+<p><img src="/2020/11/15/hadoop-hdfs/20201006062120054_19202.png" alt="操作方式"></p>
+<ul>
+<li><code>SecondaryNameNode</code>节点 的主要功能是周期性将元数据节点的命名空间镜像文件（<code>fsimage</code>）和修改日志（<code>edits</code>）进行合并，以防edits日志文件过大。下面来看一看合并的流程：</li>
+</ul>
+<p>1、<code>SecondaryNameNode</code>节点 需要合并时，首先通知<code>NameNode</code>节点生成新的日志文件，以后的日志都写到新的日志文件中。</p>
+<p>2、<code>SecondaryNameNode</code>节点 用<code>http get</code>从<code>NameNode</code>节点获得<code>fsimage</code>文件及旧的<code>edits</code>日志文件。</p>
+<p>3、<code>SecondaryNameNode</code>节点 将 <code>fsimage</code> 文件加载到内存中，并执行日志文件中的操作，然后生成新的<code>fsimage</code>文件。</p>
+<p>4、<code>SecondaryNameNode</code>节点将新的<code>fsimage</code>文件用<code>http post</code>传回<code>NameNode</code>节点上。</p>
+<p>5、<code>NameNode</code> 节点可以将旧的<code>fsimage</code>文件及旧的日志文件，换为新的<code>fsimage</code>文件和新的日志文件(第一步生成的)，然后更新<code>fstime</code>文件，写入此次<code>checkpoint</code>的时间。</p>
+<p>6、这样<code>NameNode</code> 节点中的<code>fsimage</code>文件保存了最新的<code>checkpoint</code>的元数据信息，日志文件也重新开始，不会变的很大了。</p>
+<ul>
+<li>注意：</li>
+</ul>
+<p>1、这种机制有个问题：因<code>edits</code>存放在<code>NameNode</code>中，当<code>NameNode</code>挂掉，<code>edits</code>也会丢失，导致利用<code>Secondary NameNode</code>恢复<code>Namenode</code>时，会有部分数据丢失。</p>
+<p>2、<code>HDFS</code>设置了两种机制进行条件合并（<code>hdfs-site.xml</code>）：</p>
+<p>第一种：当时间间隔大于或者等于<code>dfs.namenode.checkpoint.period</code>配置的时间是做合并（默认一小时）。</p>
+<p>第二种：当最后一次往<code>journalNode</code>写入的<code>TxId</code>（这个可以在<code>Namenode</code>日志或者50070界面可以看到）和最近一次做<code>checkpoint</code>的<code>TxId</code>的差值大于或者等于<code>dfs.namenode.checkpoint.txns</code>配置的数量（默认1000000）时做一次合并。</p>
+<p><img src="/2020/11/15/hadoop-hdfs/20201006062357840_22090.png" alt="配置"></p>
+<blockquote>
+<p>引用的博客：<a href="https://blog.xiaoxiaomo.com/2016/06/25/Hadoop-HDFS之NameNode/" target="_blank" rel="noopener">参考资料</a></p>
+</blockquote>
+<h5 id="DataNode"><a href="#DataNode" class="headerlink" title="DataNode"></a>DataNode</h5><ul>
+<li>主要作用</li>
+</ul>
+<p>主要负责存储对应的文件（这里的文件是对应的数据块，<code>Hadoop2.x</code>以后默认大小为128M），备份对应的文件（副本数目可在配置里设置<code>dfs.replication</code>）。</p>
+<h4 id="HDFS的优点和缺点"><a href="#HDFS的优点和缺点" class="headerlink" title="HDFS的优点和缺点"></a>HDFS的优点和缺点</h4><h5 id="HDFS优点"><a href="#HDFS优点" class="headerlink" title="HDFS优点"></a>HDFS优点</h5><p>1、可构建在廉价机器上。</p>
+<p>2、高容错性。</p>
+<p>3、适合批处理。</p>
+<p>4、适合大数据处理。</p>
+<p>5、流式文件访问。</p>
+<h5 id="HDFS缺点"><a href="#HDFS缺点" class="headerlink" title="HDFS缺点"></a>HDFS缺点</h5><p>1、低延迟数据访问。</p>
+<p>2、小文件存取。</p>
+<p>3、并发写入、文件随机修改。</p>
+<p>*<em><code>HDFS</code>文件系统为什么不适用于存储小文件? *</em></p>
+<p>这和<code>HDFS</code>系统底层设计实现有关系的，<code>HDFS</code>本身的设计就是用来解决海量大文件数据的存储。当数据被<code>HDFS</code>存储的时候，它会被切割成多个的独立的数据块，而这些数据块的信息会被存储在元数据中。如果文件越小，对应的元数据里内存空间就会被占用，从而造成性能上的浪费。</p>
+<p><strong>如何解决？</strong></p>
+<ul>
+<li>1、采用<code>HAR</code>的归档方式。</li>
+</ul>
+<p><code>HAR</code>为构建在其它文件系统上用于文件存档的文件系统，通常将hdfs中的多个文件打包成一个存档文件，减少<code>Namenode</code>内存的使用，可以直接使用<code>hadoop archive</code>命令创建<code>HAR</code>文件。创建<code>HAR</code>的过程是在运行一个<code>mr</code>作业。</p>
+<p><code>HAR</code>在对小文件进行存档后，原文件不会被删除，且创建之后不能改变，文件名中也不能有空格存在，否则会报异常</p>
+<ul>
+<li>2、采用<code>CombineFileInputFormat</code>。</li>
+</ul>
+<p><code>CombineFileInputFormat</code>是一种新的<code>inputformat</code>，用于将多个文件合成一个单独的split，而且它还可以考虑数据的存储位置。</p>
+<ul>
+<li>3、开启<code>JVM</code>重用。</li>
+</ul>
+<p><code>JVM</code>重用可以使得<code>JVM</code>实例在同一个<code>job</code>中重新使用N次，N的值可以在<code>hadoop的mapred-site.xml</code>文件中进行配置，通常在10-20之间。如果没有小文件，不要开启<code>JVM</code>重用，因为会一直占用使用到的<code>task</code>卡槽，直到任务完成才释放。</p>
+<h4 id="HDFS的其它功能"><a href="#HDFS的其它功能" class="headerlink" title="HDFS的其它功能"></a>HDFS的其它功能</h4><h5 id="心跳机制和重新复制"><a href="#心跳机制和重新复制" class="headerlink" title="心跳机制和重新复制"></a>心跳机制和重新复制</h5><p>每个<code>DataNode</code> 定期向 <code>NameNode</code> 发送心跳消息，（<code>DataNode</code>向<code>NameNode</code>汇报的信息有2点，一个是自身<code>DataNode</code>的状态信息，另一个是自身<code>DataNode</code>所持有的所有的数据块的信息。）如果超过指定时间没有收到心跳消息，则将<code>DataNode</code> 标记为死亡。<code>NameNode</code> 不会将任何新的<code>IO</code> 请求转发给标记为死亡的<code>DataNode</code>，也不会再使用这些 <code>DataNode</code> 上的数据。 由于数据不再可用，可能会导致某些块的复制因子小于其指定值，<code>NameNode</code> 会跟踪这些块，并在必要的时候进行重新复制。</p>
+<h5 id="副本放置策略"><a href="#副本放置策略" class="headerlink" title="副本放置策略"></a>副本放置策略</h5><p>第一副本：放置在上传文件的<code>DataNode</code>上；如果是集群外提交，则随机挑选一台磁盘不太慢、<code>CPU</code>不太忙的节点上；</p>
+<p>第二副本：放置在于第一个副本不同的机架的节点上；</p>
+<p>第三副本：与第二个副本相同机架的不同节点上；</p>
+<p>如果还有更多的副本：随机放在节点中；</p>
+<h4 id="HDFS的读写流程"><a href="#HDFS的读写流程" class="headerlink" title="HDFS的读写流程"></a>HDFS的读写流程</h4><h5 id="HDFS的写操作"><a href="#HDFS的写操作" class="headerlink" title="HDFS的写操作"></a>HDFS的写操作</h5><blockquote>
+<p>说明：以下内容引入：<a href="https://blog.xiaoxiaomo.com/2016/06/26/Hadoop-HDFS之读写流程/" target="_blank" rel="noopener">Hadoop-HDFS之读写流程</a></p>
+</blockquote>
+<p><strong>准备工作</strong><br><img src="/2020/11/15/hadoop-hdfs/20201005150652629_14529.png" alt="HDFS写操作01"></p>
+<p>1、<code>HDFS client</code>先会去询问<code>NameNode</code>，看哪些<code>DataNode</code>可以存储文件。文件的拆分是在<code>HDFS client</code>中完成的，比如拆分成<code>A</code>、<code>B</code>、<code>C</code>。</p>
+<p>2、<code>NameNode</code>查看它的元数据信息，发现<code>DataNode 1</code>，<code>2</code>，<code>7</code>上有空间可以存储<code>Block A</code>，于是将此信息告诉<code>HDFS Client</code>。</p>
+<p>3、<code>HDFS Client</code>接到<code>NameNode</code>返回的<code>DataNode</code>列表信息后，它会直接联系第一个<code>DataNode1</code>，让它准备好接收<code>Block A</code>（建立TCP连接）。</p>
+<p>4、在<code>DataNode1</code>建立好<code>TCP</code>连接后它会把<code>HDFS Client</code>要写<code>Block A</code>的请求顺序传给<code>DataNode2</code>(在与<code>HDFS Client</code>建立好<code>TCP</code>连接后从<code>HDFS Client</code>获得的<code>DataNodel1</code>信息)，同理传递给<code>DataNode7</code>。</p>
+<p>5、当<code>DataNode7</code>准备好后，会回传信息过来，<code>HDFS Client</code>接到信息后表示都准备好了，就可以写数据了。</p>
+<p><strong>写入数据</strong><br><img src="/2020/11/15/hadoop-hdfs/20201005151000787_25320.png" alt="HDFS写数据02"></p>
+<p>1、<code>HDFS Client</code>开始往<code>DataNode1</code>写入<code>Block A</code>数据。同准备工作一样，当<code>DataNode1</code>接收完<code>Block A</code>数据后，它会顺序将<code>Block A</code>数据传输给<code>ataNode2</code>，然后<code>DataNode2</code>再传输给<code>DataNode7</code>。</p>
+<p>2、每个<code>DataNode</code>在接收完<code>Block A</code>数据后，会发消息给<code>NameNode</code>，告诉它<code>Block</code>数据已经接收完毕。</p>
+<p>3、<code>NameNode</code>同时会根据它接收到的消息更新它保存的文件系统元数据信息。</p>
+<p>4、当<code>Block A</code>成功写入3个<code>DataNode</code>之后，<code>DataNode1</code>会发送一个成功信息给<code>HDFS Client</code>，同时<code>HDFS Client</code>也会发一个<code>Block A</code>成功写入的信息给<code>NameNode</code>。之后，<code>HDFS Client</code>才能开始继续处理下一个<code>Block-Block B</code>。</p>
+<h5 id="HDFS读数据操作"><a href="#HDFS读数据操作" class="headerlink" title="HDFS读数据操作"></a>HDFS读数据操作</h5><p><img src="/2020/11/15/hadoop-hdfs/20201005152719398_25675.png" alt="HDFS读取文件"></p>
+<p>1、<code>HDFS Client</code>会先去联系<code>NameNode</code>，询问file.txt总共分为几个<code>Block</code>而且这些<code>Block</code>分别存放在哪些<code>DataNode</code>上。</p>
+<p>2、由于每个<code>Block</code>都会存在几个副本，所以<code>NameNode</code>会把<code>file.txt</code>文件组成的<code>Block</code>所对应的所有<code>DataNode</code>列表都返回给<code>HDFS Client</code>。</p>
+<p>3、然后<code>HDFS Client</code>会选择<code>DataNode</code>列表里的第一个<code>DataNode</code>去读取对应的<code>Block</code>。比如由于<code>Block A</code>存储在<code>DataNode1</code>，<code>2</code>，<code>7</code>，那么<code>HDFS Client</code>会到<code>DataNode1</code>去读取<code>Block A</code>；<code>Block C</code>存储在<code>DataNode7</code>，<code>8</code>，<code>9</code>，那么<code>HDFS Client</code>就回到<code>DataNode7</code>去读取<code>Block C</code>。</p>
+<p><strong>补充</strong></p>
+<h4 id="漫画详解HDFS的存储原理"><a href="#漫画详解HDFS的存储原理" class="headerlink" title="漫画详解HDFS的存储原理"></a>漫画详解HDFS的存储原理</h4><blockquote>
+<p>说明：以下图片引用自博客：<a href="https://blog.csdn.net/hudiefenmu/article/details/37655491" target="_blank" rel="noopener">翻译经典 HDFS 原理讲解漫画</a></p>
+</blockquote>
+<h5 id="HDFS写数据原理"><a href="#HDFS写数据原理" class="headerlink" title="HDFS写数据原理"></a>HDFS写数据原理</h5><p><img src="/2020/11/15/hadoop-hdfs/20201005154307746_29899.png" alt="01"><br><img src="/2020/11/15/hadoop-hdfs/20201005154400343_2238.png" alt="02"><br><img src="/2020/11/15/hadoop-hdfs/20201005154419537_12863.png" alt="03"></p>
+<h5 id="HDFS读数据原理"><a href="#HDFS读数据原理" class="headerlink" title="HDFS读数据原理"></a>HDFS读数据原理</h5><p><img src="/2020/11/15/hadoop-hdfs/20201005154514015_9371.png" alt="01"></p>
+<h5 id="HDFS故障类型和其检测方法"><a href="#HDFS故障类型和其检测方法" class="headerlink" title="HDFS故障类型和其检测方法"></a>HDFS故障类型和其检测方法</h5><p><img src="/2020/11/15/hadoop-hdfs/20201005154611512_25627.png" alt="01"><br><img src="/2020/11/15/hadoop-hdfs/20201005154626986_30801.png" alt="02"></p>
+<h6 id="读写故障的处理"><a href="#读写故障的处理" class="headerlink" title="读写故障的处理"></a>读写故障的处理</h6><p><img src="/2020/11/15/hadoop-hdfs/20201005154703957_16442.png" alt="01"></p>
+<h6 id="DataNode-故障处理"><a href="#DataNode-故障处理" class="headerlink" title="DataNode 故障处理"></a>DataNode 故障处理</h6><p><img src="/2020/11/15/hadoop-hdfs/20201005154733471_9427.png" alt="01"></p>
+<h6 id="副本布局策略"><a href="#副本布局策略" class="headerlink" title="副本布局策略"></a>副本布局策略</h6><p><img src="/2020/11/15/hadoop-hdfs/20201005154803522_9279.png" alt="01"></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">L Q</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://Mickeyliqing.github.io/2020/11/15/hadoop-hdfs/">http://Mickeyliqing.github.io/2020/11/15/hadoop-hdfs/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">L Q</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/HDFS/">
+                                    <span class="chip bg-color">HDFS</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/11/15/hadoop-mapreduce/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Hadoop_MapReduce">
+                        
+                        <span class="card-title">Hadoop_MapReduce</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hadoop/" class="post-category">
+                                    Hadoop
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MapReduce/">
+                        <span class="chip bg-color">MapReduce</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/11/15/hadoop-hdfs/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Hadoop_HDFS">
+                        
+                        <span class="card-title">Hadoop_HDFS</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hadoop/" class="post-category">
+                                    Hadoop
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HDFS/">
+                        <span class="chip bg-color">HDFS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2024</span>
+            
+            <a href="/about" target="_blank">L Q</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Mickeyliqing/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:Mickeyliqing@Gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2698999291" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2698999291" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+
+</html>

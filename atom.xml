@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>L Q</title>
+  
+  <subtitle>L Q</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://mickeyliqing.github.io/"/>
+  <updated>2024-04-15T12:59:21.174Z</updated>
+  <id>http://mickeyliqing.github.io/</id>
+  
+  <author>
+    <name>L Q</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>项目经验-注册登录</title>
+    <link href="http://mickeyliqing.github.io/2024/04/15/xiang-mu-jing-yan-zhu-ce-deng-lu/"/>
+    <id>http://mickeyliqing.github.io/2024/04/15/xiang-mu-jing-yan-zhu-ce-deng-lu/</id>
+    <published>2024-04-15T12:58:33.000Z</published>
+    <updated>2024-04-15T12:59:21.174Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;项目经验-用户注册-登录&quot;&gt;&lt;a href=&quot;#项目经验-用户注册-登录&quot; class=&quot;headerlink&quot; title=&quot;项目经验-用户注册-登录&quot;&gt;&lt;/a&gt;项目经验-用户注册-登录&lt;/h1&gt;&lt;h2 id=&quot;注册流程&quot;&gt;&lt;a href=&quot;#注册流程&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="项目经验" scheme="http://Mickeyliqing.github.io/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="项目经验" scheme="http://Mickeyliqing.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>项目经验-开发细节</title>
+    <link href="http://mickeyliqing.github.io/2024/04/13/xiang-mu-jing-yan-kai-fa-xi-jie/"/>
+    <id>http://mickeyliqing.github.io/2024/04/13/xiang-mu-jing-yan-kai-fa-xi-jie/</id>
+    <published>2024-04-13T12:24:32.000Z</published>
+    <updated>2024-04-13T12:25:10.236Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;项目经验-开发细节&quot;&gt;&lt;a href=&quot;#项目经验-开发细节&quot; class=&quot;headerlink&quot; title=&quot;项目经验-开发细节&quot;&gt;&lt;/a&gt;项目经验-开发细节&lt;/h1&gt;&lt;h2 id=&quot;MybatisPlus-中-Param-用和不用的区别&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="项目经验" scheme="http://Mickeyliqing.github.io/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="项目经验" scheme="http://Mickeyliqing.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>项目经验-报错信息</title>
+    <link href="http://mickeyliqing.github.io/2024/04/13/xiang-mu-jing-yan-bao-cuo-xin-xi/"/>
+    <id>http://mickeyliqing.github.io/2024/04/13/xiang-mu-jing-yan-bao-cuo-xin-xi/</id>
+    <published>2024-04-13T12:22:38.000Z</published>
+    <updated>2024-04-13T12:23:31.410Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;项目经验-报错信息&quot;&gt;&lt;a href=&quot;#项目经验-报错信息&quot; class=&quot;headerlink&quot; title=&quot;项目经验-报错信息&quot;&gt;&lt;/a&gt;项目经验-报错信息&lt;/h1&gt;&lt;h2 id=&quot;Ngnix-报-504&quot;&gt;&lt;a href=&quot;#Ngnix-报-504&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="项目经验" scheme="http://Mickeyliqing.github.io/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="项目经验" scheme="http://Mickeyliqing.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Poi-tl 处理 Word 文档表格数据</title>
+    <link href="http://mickeyliqing.github.io/2024/04/13/shi-yong-poi-tl-chu-li-word-wen-dang-biao-ge-shu-ju/"/>
+    <id>http://mickeyliqing.github.io/2024/04/13/shi-yong-poi-tl-chu-li-word-wen-dang-biao-ge-shu-ju/</id>
+    <published>2024-04-13T12:21:00.000Z</published>
+    <updated>2024-04-13T12:21:51.652Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;使用-Poi-tl-处理-Word-文档表格数据&quot;&gt;&lt;a href=&quot;#使用-Poi-tl-处理-Word-文档表格数据&quot; class=&quot;headerlink&quot; title=&quot;使用 Poi-tl 处理 Word 文档表格数据&quot;&gt;&lt;/a&gt;使用 Poi-tl 处理
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Poi-tl" scheme="http://Mickeyliqing.github.io/categories/Poi-tl/"/>
+    
+    
+      <category term="Poi-tl" scheme="http://Mickeyliqing.github.io/tags/Poi-tl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 PDFBox 给 PDF 添加水印</title>
+    <link href="http://mickeyliqing.github.io/2024/04/13/shi-yong-pdfbox-gei-pdf-tian-jia-shui-yin/"/>
+    <id>http://mickeyliqing.github.io/2024/04/13/shi-yong-pdfbox-gei-pdf-tian-jia-shui-yin/</id>
+    <published>2024-04-13T12:19:42.000Z</published>
+    <updated>2024-04-13T12:20:32.767Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;使用-PDFBox-给-PDF-添加水印&quot;&gt;&lt;a href=&quot;#使用-PDFBox-给-PDF-添加水印&quot; class=&quot;headerlink&quot; title=&quot;使用 PDFBox 给 PDF 添加水印&quot;&gt;&lt;/a&gt;使用 PDFBox 给 PDF
+        
+      
+    
+    </summary>
+    
+    
+      <category term="PDFBox" scheme="http://Mickeyliqing.github.io/categories/PDFBox/"/>
+    
+    
+      <category term="PDFBox" scheme="http://Mickeyliqing.github.io/tags/PDFBox/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Documents4j 处理 Word 转 PDF</title>
+    <link href="http://mickeyliqing.github.io/2024/04/13/shi-yong-documents4j-chu-li-word-zhuan-pdf/"/>
+    <id>http://mickeyliqing.github.io/2024/04/13/shi-yong-documents4j-chu-li-word-zhuan-pdf/</id>
+    <published>2024-04-13T12:02:36.000Z</published>
+    <updated>2024-04-13T12:03:34.401Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;使用-Documents4j-处理-Word-转-PDF&quot;&gt;&lt;a href=&quot;#使用-Documents4j-处理-Word-转-PDF&quot; class=&quot;headerlink&quot; title=&quot;使用 Documents4j 处理 Word 转
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Documents4j" scheme="http://Mickeyliqing.github.io/categories/Documents4j/"/>
+    
+    
+      <category term="Documents4j" scheme="http://Mickeyliqing.github.io/tags/Documents4j/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>EFK_部署文档</title>
+    <link href="http://mickeyliqing.github.io/2023/12/06/efk-bu-shu-wen-dang/"/>
+    <id>http://mickeyliqing.github.io/2023/12/06/efk-bu-shu-wen-dang/</id>
+    <published>2023-12-06T12:54:20.000Z</published>
+    <updated>2023-12-06T13:39:36.232Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;EFK-部署文档&quot;&gt;&lt;a href=&quot;#EFK-部署文档&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="EFK" scheme="http://Mickeyliqing.github.io/categories/EFK/"/>
+    
+    
+      <category term="EFK" scheme="http://Mickeyliqing.github.io/tags/EFK/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Office_文件在线预览</title>
+    <link href="http://mickeyliqing.github.io/2023/12/06/office-wen-jian-zai-xian-yu-lan/"/>
+    <id>http://mickeyliqing.github.io/2023/12/06/office-wen-jian-zai-xian-yu-lan/</id>
+    <published>2023-12-06T12:52:45.000Z</published>
+    <updated>2023-12-06T13:39:45.491Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Office-文件在线预览&quot;&gt;&lt;a href=&quot;#Office-文件在线预览&quot; class=&quot;headerlink&quot; title=&quot;Office_文件在线预览&quot;&gt;&lt;/a&gt;Office_文件在线预览&lt;/h1&gt;&lt;h2 id=&quot;方案一&quot;&gt;&lt;a href=&quot;#方案一&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="文件在线预览" scheme="http://Mickeyliqing.github.io/categories/%E6%96%87%E4%BB%B6%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88/"/>
+    
+    
+      <category term="文件在线预览" scheme="http://Mickeyliqing.github.io/tags/%E6%96%87%E4%BB%B6%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用_Poi-tl_生成 Word 文档</title>
+    <link href="http://mickeyliqing.github.io/2023/12/06/shi-yong-poi-tl-sheng-cheng-word-wen-dang/"/>
+    <id>http://mickeyliqing.github.io/2023/12/06/shi-yong-poi-tl-sheng-cheng-word-wen-dang/</id>
+    <published>2023-12-06T12:51:16.000Z</published>
+    <updated>2023-12-06T13:40:09.216Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;使用-Poi-tl-生成-Word-文档&quot;&gt;&lt;a href=&quot;#使用-Poi-tl-生成-Word-文档&quot; class=&quot;headerlink&quot; title=&quot;使用 Poi-tl 生成 Word 文档&quot;&gt;&lt;/a&gt;使用 Poi-tl 生成 Word
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Poi-tl" scheme="http://Mickeyliqing.github.io/categories/Poi-tl/"/>
+    
+    
+      <category term="Poi-tl" scheme="http://Mickeyliqing.github.io/tags/Poi-tl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringCloud_Gateway_动态路由</title>
+    <link href="http://mickeyliqing.github.io/2023/12/06/springcloud-gateway-dong-tai-lu-you/"/>
+    <id>http://mickeyliqing.github.io/2023/12/06/springcloud-gateway-dong-tai-lu-you/</id>
+    <published>2023-12-06T12:47:21.000Z</published>
+    <updated>2023-12-06T12:49:20.033Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringCloud-Gateway-动态路由&quot;&gt;&lt;a href=&quot;#SpringCloud-Gateway-动态路由&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringCloud" scheme="http://Mickeyliqing.github.io/categories/SpringCloud/"/>
+    
+    
+      <category term="SpringCloud" scheme="http://Mickeyliqing.github.io/tags/SpringCloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot_拦截器</title>
+    <link href="http://mickeyliqing.github.io/2023/12/06/springboot-lan-jie-qi/"/>
+    <id>http://mickeyliqing.github.io/2023/12/06/springboot-lan-jie-qi/</id>
+    <published>2023-12-06T11:59:35.000Z</published>
+    <updated>2023-12-06T12:00:49.033Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringBoot-拦截器&quot;&gt;&lt;a href=&quot;#SpringBoot-拦截器&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Knife4j_整合_Swagger3</title>
+    <link href="http://mickeyliqing.github.io/2023/12/05/knife4j-zheng-he-swagger3/"/>
+    <id>http://mickeyliqing.github.io/2023/12/05/knife4j-zheng-he-swagger3/</id>
+    <published>2023-12-05T13:59:59.000Z</published>
+    <updated>2023-12-05T14:00:57.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Knife4j整合Swagger3&quot;&gt;&lt;a href=&quot;#Knife4j整合Swagger3&quot; class=&quot;headerlink&quot; title=&quot;Knife4j整合Swagger3&quot;&gt;&lt;/a&gt;Knife4j整合Swagger3&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Knife4j" scheme="http://Mickeyliqing.github.io/categories/Knife4j/"/>
+    
+    
+      <category term="Knife4j" scheme="http://Mickeyliqing.github.io/tags/Knife4j/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>项目经验</title>
+    <link href="http://mickeyliqing.github.io/2023/07/30/xiang-mu-jing-yan/"/>
+    <id>http://mickeyliqing.github.io/2023/07/30/xiang-mu-jing-yan/</id>
+    <published>2023-07-30T06:35:18.000Z</published>
+    <updated>2023-07-30T06:35:59.319Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;项目经验&quot;&gt;&lt;a href=&quot;#项目经验&quot; class=&quot;headerlink&quot; title=&quot;项目经验&quot;&gt;&lt;/a&gt;项目经验&lt;/h1&gt;&lt;h2 id=&quot;自定义返回状态码&quot;&gt;&lt;a href=&quot;#自定义返回状态码&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="项目经验" scheme="http://Mickeyliqing.github.io/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="项目经验" scheme="http://Mickeyliqing.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringCloud_微服务项目搭建</title>
+    <link href="http://mickeyliqing.github.io/2023/07/30/springcloud-wei-fu-wu-xiang-mu-da-jian/"/>
+    <id>http://mickeyliqing.github.io/2023/07/30/springcloud-wei-fu-wu-xiang-mu-da-jian/</id>
+    <published>2023-07-30T06:33:13.000Z</published>
+    <updated>2023-12-06T13:40:22.273Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringCloud-微服务项目搭建&quot;&gt;&lt;a href=&quot;#SpringCloud-微服务项目搭建&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringCloud" scheme="http://Mickeyliqing.github.io/categories/SpringCloud/"/>
+    
+    
+      <category term="SpringCloud" scheme="http://Mickeyliqing.github.io/tags/SpringCloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot_Nacos</title>
+    <link href="http://mickeyliqing.github.io/2023/04/21/springboot-nacos/"/>
+    <id>http://mickeyliqing.github.io/2023/04/21/springboot-nacos/</id>
+    <published>2023-04-21T14:24:59.000Z</published>
+    <updated>2023-04-21T14:26:15.933Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringBoot-Nacos&quot;&gt;&lt;a href=&quot;#SpringBoot-Nacos&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot_EasyEs_Elasticsearch</title>
+    <link href="http://mickeyliqing.github.io/2023/03/03/springboot-easyes-elasticsearch/"/>
+    <id>http://mickeyliqing.github.io/2023/03/03/springboot-easyes-elasticsearch/</id>
+    <published>2023-03-03T05:00:14.000Z</published>
+    <updated>2023-03-03T05:00:56.323Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringBoot-EasyEs-Elasticsearch&quot;&gt;&lt;a href=&quot;#SpringBoot-EasyEs-Elasticsearch&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot_Kafka</title>
+    <link href="http://mickeyliqing.github.io/2023/02/28/springboot-kafka/"/>
+    <id>http://mickeyliqing.github.io/2023/02/28/springboot-kafka/</id>
+    <published>2023-02-28T11:02:10.000Z</published>
+    <updated>2023-02-28T11:04:39.484Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringBoot-Kafka&quot;&gt;&lt;a href=&quot;#SpringBoot-Kafka&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot_Kafka&quot;&gt;&lt;/a&gt;SpringBoot_Kafka&lt;/h1&gt;&lt;h2 id=&quot;第一步&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot-Xxl-Job</title>
+    <link href="http://mickeyliqing.github.io/2022/11/01/springboot-xxl-job/"/>
+    <id>http://mickeyliqing.github.io/2022/11/01/springboot-xxl-job/</id>
+    <published>2022-11-01T11:17:40.000Z</published>
+    <updated>2022-11-01T11:18:14.684Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringBoot-Xxl-Job&quot;&gt;&lt;a href=&quot;#SpringBoot-Xxl-Job&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot_Xxl-Job&quot;&gt;&lt;/a&gt;SpringBoot_Xxl-Job&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot_Elasticsearch</title>
+    <link href="http://mickeyliqing.github.io/2022/11/01/springboot-elasticsearch/"/>
+    <id>http://mickeyliqing.github.io/2022/11/01/springboot-elasticsearch/</id>
+    <published>2022-11-01T11:16:28.000Z</published>
+    <updated>2022-11-01T11:17:07.496Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringBoot-Elasticsearch&quot;&gt;&lt;a href=&quot;#SpringBoot-Elasticsearch&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="http://Mickeyliqing.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis_进阶</title>
+    <link href="http://mickeyliqing.github.io/2022/10/21/redis-jin-jie/"/>
+    <id>http://mickeyliqing.github.io/2022/10/21/redis-jin-jie/</id>
+    <published>2022-10-21T12:19:31.000Z</published>
+    <updated>2022-10-21T12:20:56.248Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Redis-进阶&quot;&gt;&lt;a href=&quot;#Redis-进阶&quot; class=&quot;headerlink&quot; title=&quot;Redis_进阶&quot;&gt;&lt;/a&gt;Redis_进阶&lt;/h1&gt;&lt;h2 id=&quot;基础数据结构&quot;&gt;&lt;a href=&quot;#基础数据结构&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Redis" scheme="http://Mickeyliqing.github.io/categories/Redis/"/>
+    
+    
+      <category term="Redis" scheme="http://Mickeyliqing.github.io/tags/Redis/"/>
+    
+  </entry>
+  
+</feed>
